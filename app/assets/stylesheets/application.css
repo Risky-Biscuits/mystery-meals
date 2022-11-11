@@ -1,0 +1,140 @@
+ body {
+   background-color: rgb(13, 18, 47);
+   color: white;
+ }
+
+ .dark-mode {
+   background-color: black;
+   color: white;
+ }
+
+ .light-mode {
+   background-color: rgb(207, 222, 244);
+   color: rgb(7, 2, 2);
+ }
+
+ .App {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .loggedIn {
+   color: rgb(14, 255, 42);
+   text-shadow: 4px 4px 4px black;
+   font-weight: bold;
+   text-align: center;
+ }
+
+ .loggedOut {
+   color: rgb(190, 226, 253);
+   text-shadow: 4px 4px 4px black;
+   font-weight: bold;
+   text-align: center;
+ }
+
+ /* =========================DEVISE SECTION ================================== */
+ /* Refer to /app/views/devise/sessions/new.html.erb */
+
+ .formContainer {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(28, 92, 160);
+   font-size: 2rem;
+   border-radius: 4px;
+   color: rgb(173, 212, 240);
+   text-shadow: 4px 4px 8px black;
+ }
+
+ #user_email {
+   border-radius: 8px;
+   padding: .5rem .8rem .5rem .8rem;
+   width: 17rem;
+   font-size: 1rem;
+ }
+
+ #user_password {
+   border-radius: 8px;
+   padding: .5rem .8rem .5rem .8rem;
+   width: 17rem;
+   font-size: 1rem;
+ }
+
+ #user_password_confirmation {
+   border-radius: 8px;
+   padding: .5rem .8rem .5rem .8rem;
+   width: 17rem;
+   font-size: 1rem;
+ }
+
+ input#user_remember_me {
+   width: 1.2rem;
+   height: 1.2rem;
+ }
+
+ #new_user>div:nth-child(3)>div:nth-child(1) {
+   margin-bottom: -40px;
+ }
+
+ #new_user>div:nth-child(4)>div:nth-child(1) {
+   margin-bottom: -40px;
+ }
+
+ #new_user>div.actions>input[type=submit] {
+   box-shadow: 4px 4px 8px black;
+   color: rgb(173, 212, 240);
+   background-color: rgb(64, 35, 103);
+   border-radius: 8px;
+   padding: .5rem;
+ }
+
+ body>div>a:nth-child(3) {
+   color: rgb(168, 156, 248);
+   text-decoration: none;
+   margin-top: 20px;
+   margin-bottom: -30px;
+ }
+
+ body>div>a:nth-child(5) {
+   color: rgb(168, 156, 248);
+   text-decoration: none;
+   margin-top: 20px;
+   margin-bottom: 30px;
+ }
+
+ body>div>a {
+   padding-bottom: 0rem;
+ }
+
+ #new_user>div.actions {
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+ }
+
+ .error {
+   font-size: 1rem;
+ }
+
+ body>div>div:nth-child(3)>div:nth-child(1) {
+   margin-top: 10px;
+   margin-bottom: -45px;
+ }
+
+ body>div>div:nth-child(4)>div:nth-child(1) {
+   margin-top: 10px;
+   margin-bottom: -45px;
+ }
+
+ body>div>div:nth-child(5) {
+   margin-top: 10px;
+   margin-bottom: -45px;
+ }
+
+ body>div>div.actions>input[type=submit] {
+   margin-top: 60px;
+   margin-bottom: -45px;
+ }
