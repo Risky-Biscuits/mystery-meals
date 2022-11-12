@@ -45,21 +45,22 @@ const Header = ({
           </div>
 
           <div className="navigation-links">
-            <Button href="/" color="inherit">
-              Home
-            </Button>
-            <Button href="/restaurantindex" color="inherit">
-              See All Restaurants
-            </Button>
-
             {/* IF user is logged in, do NOT display Login and Sign-up Buttons */}
             {logged_in === false && (
               <>
+                <Button href="/restaurantindex" color="inherit">
+                  See All Restaurants
+                </Button>
                 <Button href={sign_in_route} color="inherit">
                   Login
                 </Button>
-                <Button href={new_user_route} color="inherit">
-                  Sign Up!
+                <Button
+                  variant="contained"
+                  sx={{ color: "black", padding: "12px" }}
+                  href={new_user_route}
+                  color="inherit"
+                >
+                  Get Started
                 </Button>
               </>
             )}
@@ -67,15 +68,20 @@ const Header = ({
             {/* IF user is logged in, display Sign-Out Button */}
             {logged_in === true && (
               <>
+                <Button href="/" color="inherit">
+                  Home
+                </Button>
+                <Button href="/restaurantindex" color="inherit">
+                  See All Restaurants
+                </Button>
                 <Button href="/protectedrestaurantindex" color="inherit">
                   See My Restaurants
                 </Button>
                 <Button href="/restaurantnew" color="inherit">
                   Add Restaurant
                 </Button>
-
                 <Button href={sign_out_route} color="inherit">
-                  Sign Out{" "}
+                  Sign Out
                 </Button>
               </>
             )}
