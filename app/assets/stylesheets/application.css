@@ -34,8 +34,16 @@ p {
 }
 
 /* =========================HEADER MAIN SECTION ============================= */
+.header-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name-box {
+  border: 1px solid white;
+  padding: 5px;
 
-
+}
 
 
 /* =========================DEVISE SECTION ================================== */

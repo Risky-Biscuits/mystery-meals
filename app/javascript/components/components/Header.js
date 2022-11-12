@@ -26,7 +26,7 @@ const Header = ({
         sx={{ bgcolor: "#AD8350", borderRadius: "8px" }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
+          <div class="header-logo-section">
             <IconButton
               size="large"
               edge="start"
@@ -37,6 +37,12 @@ const Header = ({
               {/* Header Image */}
               <img src={"../assets/Risky Biscuit_Headerlogo.png"} />
             </IconButton>
+            {logged_in === true && (
+              <div class="name-box">
+              Hi, {current_user?.first_name} {current_user?.last_name}
+              </div>
+            )}
+
           </div>
 
           <div className="navigation-links">
