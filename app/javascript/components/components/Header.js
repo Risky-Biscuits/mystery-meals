@@ -39,10 +39,9 @@ const Header = ({
             </IconButton>
             {logged_in === true && (
               <div class="name-box">
-              Hi, {current_user?.first_name} {current_user?.last_name}
+                Hi, {current_user?.first_name} {current_user?.last_name}
               </div>
             )}
-
           </div>
 
           <div className="navigation-links">
