@@ -16,7 +16,7 @@ describe("<Header />", () => {
   it("has clickable links", () => {
     render(
       <BrowserRouter>
-        <Header />
+        <Header  logged_in={true}/>
       </BrowserRouter>
     );
     userEvent.click(screen.getByText("Home"));
@@ -26,7 +26,7 @@ describe("<Header />", () => {
   it("has clickable links", () => {
     render(
       <BrowserRouter>
-        <Header />
+        <Header logged_in={false} />
       </BrowserRouter>
     );
     userEvent.click(screen.getByText("See All Restaurants"));
@@ -49,8 +49,8 @@ describe("<Header />", () => {
         <Header logged_in={false} />
       </BrowserRouter>
     );
-    userEvent.click(screen.getByText("Sign Up!"));
-    expect(screen.getByText("Sign Up!")).toBeInTheDocument();
+    userEvent.click(screen.getByText("Get Started"));
+    expect(screen.getByText("Get Started")).toBeInTheDocument();
   });
 
   it("has clickable links when logged in", () => {
