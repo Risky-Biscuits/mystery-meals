@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def create
-    restaurant = Restaurant.create(Restaurant_params)
+    restaurant = Restaurant.create(restaurant_params)
     if restaurant.valid?
       render json: restaurant
     else
@@ -12,6 +12,6 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :food_type, :image, :price, :phone_number, :website, :zip, :city, :street, :state, :restaurant_id, :user_id)
+    params.require(:restaurant).permit(:name, :food_type, :image, :price, :phone_number, :website, :zip, :city, :street, :state, :user_id, :restaurant_review_id)
   end
 end
