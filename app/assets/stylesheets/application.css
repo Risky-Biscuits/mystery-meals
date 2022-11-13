@@ -1,140 +1,214 @@
- body {
-   background-color: rgb(13, 18, 47);
-   color: white;
- }
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
 
- .dark-mode {
-   background-color: black;
-   color: white;
- }
+body {
+  background-color: #EEEEEE;
+  color: rgb(25, 24, 24);
+  font-family: 'Balsamiq Sans', cursive;
+}
 
- .light-mode {
-   background-color: rgb(207, 222, 244);
-   color: rgb(7, 2, 2);
- }
+p {
+  margin: 0;
+}
 
- .App {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
- .loggedIn {
-   color: rgb(14, 255, 42);
-   text-shadow: 4px 4px 4px black;
-   font-weight: bold;
-   text-align: center;
- }
+/* === Specific styles for when user is logged IN === */
+.loggedIn {
+  color: rgb(14, 255, 42);
+  text-shadow: 4px 4px 4px black;
+  font-weight: bold;
+  text-align: center;
+}
 
- .loggedOut {
-   color: rgb(190, 226, 253);
-   text-shadow: 4px 4px 4px black;
-   font-weight: bold;
-   text-align: center;
- }
+/* === Specific styles for when user is logged OUT === */
+.loggedOut {
+  color: rgb(190, 226, 253);
+  text-shadow: 4px 4px 4px black;
+  font-weight: bold;
+  text-align: center;
+}
 
- /* =========================DEVISE SECTION ================================== */
- /* Refer to /app/views/devise/sessions/new.html.erb */
+/* =========================DEVISE SECTION ================================== */
+/* Refer to /app/views/devise/
 
- .formContainer {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-color: rgb(28, 92, 160);
-   font-size: 2rem;
-   border-radius: 4px;
-   color: rgb(173, 212, 240);
-   text-shadow: 4px 4px 8px black;
- }
+ /*  ===== Flexbox container for form ===== */
+.erb-header {
+  display: flex;
+  background-color: #AD8350;
+  border-radius: 15px;
+  width: 90%;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+  margin-bottom: 80px;
+}
 
- #user_email {
-   border-radius: 8px;
-   padding: .5rem .8rem .5rem .8rem;
-   width: 17rem;
-   font-size: 1rem;
- }
+.erb-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #AD8350;
+  width: 100%;
+  padding: 15px;
+  margin-top: 80px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
 
- #user_password {
-   border-radius: 8px;
-   padding: .5rem .8rem .5rem .8rem;
-   width: 17rem;
-   font-size: 1rem;
- }
+.erb-footer>a {
+  text-decoration: none;
+  color: white;
+}
 
- #user_password_confirmation {
-   border-radius: 8px;
-   padding: .5rem .8rem .5rem .8rem;
-   width: 17rem;
-   font-size: 1rem;
- }
+.link-no-decoration>a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
 
- input#user_remember_me {
-   width: 1.2rem;
-   height: 1.2rem;
- }
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #EEEEEE;
+  font-size: 2rem;
+  border-radius: 4px;
+  color: rgb(51, 53, 54);
+}
 
- #new_user>div:nth-child(3)>div:nth-child(1) {
-   margin-bottom: -40px;
- }
+.sign-up-header {
+  max-width: 500px;
+  font-weight: 200px;
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
 
- #new_user>div:nth-child(4)>div:nth-child(1) {
-   margin-bottom: -40px;
- }
+.flex-row-container {
+  display: flex;
+}
 
- #new_user>div.actions>input[type=submit] {
-   box-shadow: 4px 4px 8px black;
-   color: rgb(173, 212, 240);
-   background-color: rgb(64, 35, 103);
-   border-radius: 8px;
-   padding: .5rem;
- }
+/* Centers Ricky image with form */
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
 
- body>div>a:nth-child(3) {
-   color: rgb(168, 156, 248);
-   text-decoration: none;
-   margin-top: 20px;
-   margin-bottom: -30px;
- }
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 13px rgb(58, 56, 56);
+  padding: 40px;
+  min-width: 450px;
+}
 
- body>div>a:nth-child(5) {
-   color: rgb(168, 156, 248);
-   text-decoration: none;
-   margin-top: 20px;
-   margin-bottom: 30px;
- }
+.fieldContainer>h5 {
+  font-size: 1.3rem;
+  margin-top: 0px;
+}
 
- body>div>a {
-   padding-bottom: 0rem;
- }
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
 
- #new_user>div.actions {
-   display: flex;
-   justify-content: center;
-   margin-top: 10px;
- }
+.field-container-row {
+  display: flex;
+}
 
- .error {
-   font-size: 1rem;
- }
+.devise-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
- body>div>div:nth-child(3)>div:nth-child(1) {
-   margin-top: 10px;
-   margin-bottom: -45px;
- }
+}
 
- body>div>div:nth-child(4)>div:nth-child(1) {
-   margin-top: 10px;
-   margin-bottom: -45px;
- }
+.devise-btn>input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: .4rem;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(157, 155, 155);
 
- body>div>div:nth-child(5) {
-   margin-top: 10px;
-   margin-bottom: -45px;
- }
+}
 
- body>div>div.actions>input[type=submit] {
-   margin-top: 60px;
-   margin-bottom: -45px;
- }
+/* === FlexBox Wrapper for Links at bottom of sign-in and sign up pages === */
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+}
+
+/* ===== Changes the styles of input fields ===== */
+input[type=email] {
+  width: 90%;
+  background-color: rgb(255, 254, 254);
+  border-radius: 5px;
+  height: 35px;
+}
+
+input[type=text] {
+  width: 90%;
+  background-color: rgb(255, 254, 254);
+  border-radius: 5px;
+  height: 35px;
+}
+
+input[type=password] {
+  width: 90%;
+  background-color: rgb(255, 254, 254);
+  border-radius: 5px;
+  height: 35px;
+
+}
+
+.field_with_errors {
+  display: flex;
+
+}
+
+label {
+  font-size: 1.3rem;
+}
+
+/* 
+ How to target type of input 
+ label[for=user_first_name] {
+ font-size: 1.5rem;
+ } */
+
+
+/* ===== styles for error message for incorrect input ===== */
+.error {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#error_explanation>ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0px;
+  color: red;
+}
