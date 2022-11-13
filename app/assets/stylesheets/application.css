@@ -33,6 +33,19 @@ p {
   text-align: center;
 }
 
+/* =========================HEADER MAIN SECTION ============================= */
+.header-logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name-box {
+  border: 1px solid white;
+  padding: 5px;
+
+}
+
+
 /* =========================DEVISE SECTION ================================== */
 /* Refer to /app/views/devise/
 
@@ -153,7 +166,12 @@ p {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 50px;
+}
 
+
+.navigation-links {
+  display: flex;
+  gap: 15px;
 }
 
 /* ===== Changes the styles of input fields ===== */
