@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Restaurants", type: :request do
   let(:user) { User.create email: 'test@example.com', first_name: "Ricky", last_name: "Biscuits", password: 'password', password_confirmation: 'password' }
-  let(:restaurant_review) {RestaurantReview.create review: "This was awesome!", rating: 5}
 
   # -----create-----
   describe "POST /create" do
@@ -19,8 +18,6 @@ RSpec.describe "Restaurants", type: :request do
           city: "Atlanta",
           street: "124 making biscuits lane",
           state: "GA",
-          user_id: user.id,
-          restaurant_review_id: restaurant_review.id,
         }
       }
 
