@@ -24,6 +24,15 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    restaurant = Restaurant.find(params[:id])
+    if restaurant.destroy
+      render json: restaurant
+    else
+      render json: restaurant.errors, status: 422
+    end
+  end
+
 
   private
 
