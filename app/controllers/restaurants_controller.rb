@@ -1,5 +1,12 @@
 class RestaurantsController < ApplicationController
 
+
+  def index
+    cats = Restaurant.all
+    render json: restaurants
+  end
+
+
   def create
     restaurant = Restaurant.create(restaurant_params)
     if restaurant.valid?
@@ -9,6 +16,7 @@ class RestaurantsController < ApplicationController
     end
   
   end
+
 
   private
   def restaurant_params
