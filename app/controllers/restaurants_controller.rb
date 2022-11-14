@@ -1,4 +1,10 @@
 class RestaurantsController < ApplicationController
+
+  def index
+    restaurants = Restaurant.all
+    render json: restaurants
+  end
+
   def create
     restaurant = Restaurant.create(restaurant_params)
     if restaurant.valid?
@@ -17,6 +23,7 @@ class RestaurantsController < ApplicationController
       render json: restaurant.errors, status: :unprocessable_entity
     end
   end
+
 
   private
 

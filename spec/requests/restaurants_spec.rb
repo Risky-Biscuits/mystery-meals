@@ -75,7 +75,7 @@ RSpec.describe "Restaurants", type: :request do
           state: "TX"
         }
       }
-
+          
       patch "/restaurants/#{restaurant.id}", params: update_params
       restaurant = Restaurant.first
       expect(response).to have_http_status(200)
@@ -91,4 +91,39 @@ RSpec.describe "Restaurants", type: :request do
       expect(restaurant.state).to eq "TX"
     end
   end
-end
+  
+  # -----index-----
+  describe "GET /index" do
+    it "gets a list of restaurants" do
+      Restaurant.create(
+        name: "Furry Tacos",
+        food_type: "Mexican",
+        image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
+        price: "$$",
+        phone_number: "404-555-5555",
+        website: "https://fuzzystacoshop.com/",
+        zip: 30315,
+        city: "Atlanta",
+        street: "124 making biscuits lane",
+        state: "GA"        
+        )
+  
+        # Make a request
+        get '/restaurants'
+  
+        restaurant = JSON.parse(response.body)
+        expect(response).to have_http_status(200)
+        expect(restaurant.length).to eq 1
+      end
+    end
+    
+  end    
+
+
+
+
+
+
+
+
+

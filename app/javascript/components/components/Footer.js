@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <React.Fragment>
-      <AppBar position='fixed' color='primary' sx={{ top: 'auto', bottom: 0 }}>
+      <AppBar position='sticky' color='primary' sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
           <IconButton color='inherit' aria-label='open drawer'>
             <MenuIcon />
