@@ -1,13 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
+# =========================================================================================================
+# =========================================================================================================
+# === === === === === ===  Create First User and Restaurant_Review For Restaurant === === === === === === 
 user = User.where(email: "test@example.com", first_name: "Ricky", last_name: "Biscuits").first_or_create(password: "password", password_confirmation: "password")
 
+
+# === === === === === ===  Restaurant Seed Data === === === === === === 
 restaurant_seeds = [
   {
     name: "Furry Tacos",
@@ -19,7 +17,7 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "124 making biscuits lane",
-    state: "GA"
+    state: "GA",
   },
   {
     name: "Raging Burritos",
@@ -31,7 +29,7 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "111  the bisquicks street",
-    state: "GA"
+    state: "GA",
   },
   {
     name: "Phở Cue",
@@ -43,31 +41,39 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "443 pho you lane",
-    state: "GA"
+    state: "GA",
   }
 ]
 
-restaurant_seeds.each do |restaurant|
-  user.restaurants.create(restaurant)
-  p "creating: #{restaurant}"
+review_seeds = [
+  {
+    review: "not bad for east coast tacos",
+    rating: 4,
+    restaurant_id: 1,
+    user_id: 1
+  },
+  {
+    review: "meh.. id rather have taco bell",
+    rating: 1,
+    restaurant_id: 2,
+    user_id: 1
+  },
+  {
+    review: "best soup ever!",
+    rating: 4,
+    restaurant_id: 2,
+    user_id: 1
+  },
+
+]
+
+# === === === === === ===  Restaurant Create Method for Seed Data === === === === === === 
+restaurant_seeds.each do |each_restaurant|
+  user.restaurants.create(each_restaurant)
+  p "creating: #{each_restaurant}"
 end
 
-restaurant_review_seeds = [
-  {
-    review: "Greatest food ever",
-    rating: 5,
-  },
-  {
-    review: "I wouldn't eat here if you paid me",
-    rating: 1,
-  },
-  {
-    review: "Its ok, nothing special",
-    rating: 3,
-  }
-]
-
-restaurant_review_seeds.each do |restaurant_review|
-  user.restaurant_reviews.create(restaurant_review)
-  p "creating: #{restaurant_review}"
+review_seeds.each do |each_review|
+  user.restaurant_reviews.create(each_review)
+  p "creating: #{each_review}"
 end
