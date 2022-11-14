@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
 
 
   def index
-    cats = Restaurant.all
+    restaurants = Restaurant.all
     render json: restaurants
   end
 
