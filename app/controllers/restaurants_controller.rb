@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
-
   def create
     restaurant = Restaurant.create(restaurant_params)
     if restaurant.valid?
@@ -20,6 +19,7 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
   def restaurant_params
     params.require(:restaurant).permit(:name, :food_type, :image, :price, :phone_number, :website, :zip, :city, :street, :state)
   end

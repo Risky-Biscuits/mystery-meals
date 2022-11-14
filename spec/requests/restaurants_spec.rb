@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Restaurants", type: :request do
-  let(:user) { User.create email: 'test@example.com', first_name: "Ricky", last_name: "Biscuits", password: 'password', password_confirmation: 'password' }
+  let(:user) { User.create email: "test@example.com", first_name: "Ricky", last_name: "Biscuits", password: "password", password_confirmation: "password" }
 
   # -----create-----
   describe "POST /create" do
@@ -17,7 +17,7 @@ RSpec.describe "Restaurants", type: :request do
           zip: 30315,
           city: "Atlanta",
           street: "124 making biscuits lane",
-          state: "GA",
+          state: "GA"
         }
       }
 
@@ -53,7 +53,7 @@ RSpec.describe "Restaurants", type: :request do
           zip: 30315,
           city: "Atlanta",
           street: "124 making biscuits lane",
-          state: "GA",
+          state: "GA"
         }
       }
 
@@ -72,7 +72,7 @@ RSpec.describe "Restaurants", type: :request do
           zip: 30315,
           city: "Atlanta",
           street: "124 making biscuits lane",
-          state: "TX",
+          state: "TX"
         }
       }
 
@@ -91,5 +91,4 @@ RSpec.describe "Restaurants", type: :request do
       expect(restaurant.state).to eq "TX"
     end
   end
-
 end
