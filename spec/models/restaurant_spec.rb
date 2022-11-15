@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Restaurant, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+  let(:user) { User.create email: 'test@example.com', first_name: "Ricky", last_name: "Biscuits", password: 'password', password_confirmation: 'password' }
 
 
- #--- Validations ---  
- RSpec.describe Restaurant, type: :model do
+
+RSpec.describe Restaurant, type: :model do
   it "should validate name" do
-    cat = Restaurant.create
+    restaurant = Restaurant.create
     expect(restaurant.errors[:name]).to_not be_empty
   end
 end
+
+
+ 
