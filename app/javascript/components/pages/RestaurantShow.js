@@ -4,14 +4,16 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { style } from "@mui/system";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
-const RestaurantShow = ({ restaurants }) => {
+const RestaurantShow = ({ restaurants, logged_in }) => {
   const { id } = useParams();
   const currentRestaurant = restaurants?.find(
     (restaurant) => restaurant.id === +id
   );
+
   return (
     <>
       <h1>Restaurant Details</h1>
@@ -29,6 +31,50 @@ const RestaurantShow = ({ restaurants }) => {
           <p>{currentRestaurant.zip}</p>
         </>
       )}
+{/* ------------------------------ ⬇️ When Logged In ⬇️ ------------------------------------- */}
+      {logged_in && (
+      <Button
+        variant="contained"
+        sx={{
+          color: "white",
+          padding: "12px",
+          bgcolor: "#55AF4D",
+        }}
+      >
+        REVIEW
+      </Button>
+      )}
+{/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
+
+{/* ------------------------------ ⬇️ When Logged Out ⬇️ ------------------------------------- */}
+      {!logged_in && (
+        <NavLink to={`..`} style={{ textDecoration: "none"}}>
+        <Button
+          variant="contained"
+          sx={{
+            color: "white",
+            padding: "12px",
+            bgcolor: "#55AF4D",
+          }}
+        >
+          HOME
+        </Button>
+        </NavLink>
+        )}
+{/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
+
+      <NavLink to={`/restaurantindex`} style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          sx={{
+            color: "white",
+            padding: "12px",
+            bgcolor: "#55AF4D",
+          }}
+        >
+          BACK TO ALL RESTAURANTS
+        </Button>
+      </NavLink>
     </>
   );
 };
