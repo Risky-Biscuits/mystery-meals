@@ -17,7 +17,7 @@ const ProtectedRestaurantIndex = ({ logged_in, restaurants, current_user }) => {
             <h1>See All Restaurants</h1>
             <div className="card-container">
               {restaurants
-                .filter((restaurant, index) => index === current_user.id)
+                .filter((restaurant, index) => restaurant.id === current_user.id)
                 .map((restaurant, index) => {
                   return (
                     <div key={index}>
