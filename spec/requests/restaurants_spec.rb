@@ -88,4 +88,29 @@ RSpec.describe "Restaurants", type: :request do
     end
   end
 
+  #--- Validations ---  
+
+  it "doesn't create a restaurant without a name" do
+    restaurant_params = {
+      restaurant: {
+        name: "Furry Tacos",
+        food_type: "Mexican",
+        image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
+        price: "$$",
+        phone_number: "404-555-5555",
+        website: "https://fuzzystacoshop.com/",
+        zip: 30315,
+        city: "Atlanta",
+        street: "124 making biscuits lane",
+        state: "GA",}
+    }
+    # Send the request to the  server
+    post '/restaurants', params: restaurant_params
+    # expect an error if the cat_params does not have a name
+    expect(response.status).to eq 422
+    # Convert the JSON response into a Ruby Hash
+    json = JSON.parse(response.body)
+    # Errors are returned as an array because there could be more than one, if there are more than one validation failures on an attribute.
+    expect(json['name']).to include "can't be blank"
+  end
 end
