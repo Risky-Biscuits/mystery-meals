@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import mockRestaurants from "./mockRestaurants";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import ProtectedRestaurantIndex from "./pages/ProtectedRestaurantIndex";
 import RestaurantEdit from "./pages/RestaurantEdit";
 import RestaurantIndex from "./pages/RestaurantIndex";
 import RestaurantNew from "./pages/RestaurantNew";
@@ -14,6 +15,7 @@ import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
 
+
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -22,6 +24,8 @@ const App = (props) => {
         <Route exact path="/" element={<Home {...props} />} />
         {/* Restaurant Routes */}
         <Route path="/restaurantindex" element={<RestaurantIndex restaurants={mockRestaurants} />} />
+        <Route path="/protectedrestaurantindex" element={<ProtectedRestaurantIndex {...props} />} />
+
         <Route path="/restaurantshow/:id" element={<RestaurantShow />} />
         <Route path="/restaurantnew" element={<RestaurantNew />} />
         <Route path="/restaurantedit/:id" element={<RestaurantEdit />} />
