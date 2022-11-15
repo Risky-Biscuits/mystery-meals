@@ -1,5 +1,6 @@
-require 'rails_helper'
+# require 'rails_helper'
 
+# restaurant-validations
 RSpec.describe Restaurant, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
@@ -12,3 +13,4 @@ end
     expect(restaurant.errors[:name]).to_not be_empty
   end
 end
+

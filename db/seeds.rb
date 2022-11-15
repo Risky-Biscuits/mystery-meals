@@ -1,11 +1,9 @@
-
 # =========================================================================================================
 # =========================================================================================================
-# === === === === === ===  Create First User and Restaurant_Review For Restaurant === === === === === === 
+# === === === === === ===  Create First User and Restaurant_Review For Restaurant === === === === === ===
 user = User.where(email: "test@example.com", first_name: "Ricky", last_name: "Biscuits").first_or_create(password: "password", password_confirmation: "password")
 
-
-# === === === === === ===  Restaurant Seed Data === === === === === === 
+# === === === === === ===  Restaurant Seed Data === === === === === ===
 restaurant_seeds = [
   {
     name: "Furry Tacos",
@@ -17,7 +15,7 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "124 making biscuits lane",
-    state: "GA",
+    state: "GA"
   },
   {
     name: "Raging Burritos",
@@ -29,7 +27,7 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "111  the bisquicks street",
-    state: "GA",
+    state: "GA"
   },
   {
     name: "Phở Cue",
@@ -41,7 +39,7 @@ restaurant_seeds = [
     zip: 30315,
     city: "Atlanta",
     street: "443 pho you lane",
-    state: "GA",
+    state: "GA"
   }
 ]
 
@@ -63,11 +61,11 @@ review_seeds = [
     rating: 4,
     restaurant_id: 2,
     user_id: 1
-  },
+  }
 
 ]
 
-# === === === === === ===  Restaurant Create Method for Seed Data === === === === === === 
+# === === === === === ===  Restaurant Create Method for Seed Data === === === === === ===
 restaurant_seeds.each do |each_restaurant|
   user.restaurants.create(each_restaurant)
   p "creating: #{each_restaurant}"
