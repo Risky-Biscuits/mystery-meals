@@ -32,7 +32,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
         </>
       )}
 {/* ------------------------------ ⬇️ When Logged In ⬇️ ------------------------------------- */}
-      {logged_in === true && (
+      {logged_in && (
       <Button
         variant="contained"
         sx={{
@@ -47,7 +47,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
 {/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
 
 {/* ------------------------------ ⬇️ When Logged Out ⬇️ ------------------------------------- */}
-      {logged_in === false && (
+      {!logged_in && (
         <NavLink to={`..`} style={{ textDecoration: "none"}}>
         <Button
           variant="contained"

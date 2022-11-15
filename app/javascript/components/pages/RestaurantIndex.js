@@ -20,7 +20,7 @@ const RestaurantIndex = ({
 
 {/* ------------------------------When Logged In------------------------------------- */}    
 
-      {logged_in === true && (
+      {logged_in && (
         <div className="page-container">
           <h1>See All Restaurants</h1>
           <div className="card-container">
@@ -79,7 +79,7 @@ const RestaurantIndex = ({
 
 {/* ------------------------------When Logged Out------------------------------------- */}
 
-      {logged_in === false && (
+      {!logged_in && (
         <div className="page-container">
           <h1>See All Restaurants</h1>
           <div className="card-container">
