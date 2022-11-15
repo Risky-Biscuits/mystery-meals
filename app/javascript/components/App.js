@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import mockRestaurants from "./mockRestaurants";
+import mockReviews from "./mockReviews";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProtectedRestaurantIndex from "./pages/ProtectedRestaurantIndex";
@@ -24,8 +25,7 @@ const App = (props) => {
         <Route exact path="/" element={<Home {...props} />} />
         {/* Restaurant Routes */}
         <Route path="/restaurantindex" element={<RestaurantIndex restaurants={mockRestaurants} />} />
-        <Route path="/protectedrestaurantindex" element={<ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} />} />
-
+        <Route path="/protectedrestaurantindex" element={<ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
         <Route path="/restaurantshow/:id" element={<RestaurantShow />} />
         <Route path="/restaurantnew" element={<RestaurantNew />} />
         <Route path="/restaurantedit/:id" element={<RestaurantEdit />} />
