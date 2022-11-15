@@ -13,12 +13,11 @@ const ProtectedRestaurantIndex = ({
   current_user,
 }) => {
   return (
-    <>
+    <div className="page-container">
       <h1>Protected Restaurant Index</h1>
       {logged_in === true && (
         <>
-          Logged IN
-          <div className="page-container">
+  
             <h1>See All Restaurants</h1>
             <div className="card-container">
               {reviews
@@ -60,11 +59,11 @@ const ProtectedRestaurantIndex = ({
                     });
                 })}
             </div>
-          </div>
+         
         </>
       )}
       {logged_in === false && <>YOU MUST BE LOGGED IN TO SEE THIS PAGE</>}
-    </>
+    </div>
   );
 };
 
