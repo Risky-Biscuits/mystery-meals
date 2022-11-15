@@ -14,7 +14,7 @@ describe("<RestaurantIndex />", () => {
     );
   });
 
-  it("renders without crashing", () => {
+  it("renders when user is logged in", () => {
     render(
       <BrowserRouter>
         <ProtectedRestaurantIndex logged_in={true} current_user={MockUser} restaurants={mockRestaurants} />
