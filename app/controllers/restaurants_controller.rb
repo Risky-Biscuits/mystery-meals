@@ -13,6 +13,8 @@ class RestaurantsController < ApplicationController
       render json: restaurant.errors, status: 422
     end
   end
+  
+
 
   def update
     restaurant = Restaurant.find(params[:id])
@@ -23,6 +25,7 @@ class RestaurantsController < ApplicationController
       render json: restaurant.errors, status: :unprocessable_entity
     end
   end
+
 
   def destroy
     restaurant = Restaurant.find(params[:id])
