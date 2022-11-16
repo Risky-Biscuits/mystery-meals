@@ -51,6 +51,7 @@ p {
   flex-direction: column;
   justify-content:center;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .card-container {
@@ -59,6 +60,20 @@ p {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+
+/* ===================== RESTAURANT CREATE SECTION ========================== */
+
+#priceLabel {
+  height: 33px;
+}
+
+/* body > div > div.page-container > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.css-1mum6ye-MuiGrid-root > div > div {
+
+} */
+#foodLabel {
+  width: 100%;
 }
 
 /* =========================DEVISE SECTION ================================== */
