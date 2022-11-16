@@ -13,3 +13,4 @@ class Restaurant < ApplicationRecord
   validates :state, presence: true
 end
 
+
