@@ -25,6 +25,12 @@ RSpec.describe "Restaurants", type: :request do
       JSON.parse(response.body)
       restaurant = Restaurant.first
 
+      # 422 ERROR -> CREATE
+      post '/restaurants', params: restaurant_params
+      expect(response.status).to eq 422
+      json = JSON.parse(response.body)
+      expect(json['name']).to include "can't be blank"
+
       expect(response).to have_http_status(200)
       expect(restaurant.name).to eq "Furry Tacos"
       expect(restaurant.food_type).to eq "Mexican"
@@ -89,6 +95,12 @@ RSpec.describe "Restaurants", type: :request do
       expect(restaurant.city).to eq "Atlanta"
       expect(restaurant.street).to eq "124 making biscuits lane"
       expect(restaurant.state).to eq "TX"
+
+        # 422 ERROR -> UPDATE
+      post '/restaurants', params: restaurant_params
+      expect(response.status).to eq 422
+      json = JSON.parse(response.body)
+      expect(json['name']).to include "can't be blank"
     end
   end
   
