@@ -39,6 +39,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .name-box {
   border: 1px solid white;
   padding: 5px;
@@ -49,14 +50,14 @@ p {
 .page-container {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   margin-bottom: 60px;
 }
 
 .card-container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
@@ -69,11 +70,12 @@ p {
   height: 33px;
 }
 
-/* body > div > div.page-container > div > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-12.css-1mum6ye-MuiGrid-root > div > div {
-
-} */
 #foodLabel {
   width: 100%;
+}
+
+#zip {
+  height: 34px;
 }
 
 /* =========================DEVISE SECTION ================================== */
