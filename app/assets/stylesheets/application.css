@@ -39,6 +39,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .name-box {
   border: 1px solid white;
   padding: 5px;
@@ -49,16 +50,32 @@ p {
 .page-container {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 60px;
 }
 
 .card-container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+
+/* ===================== RESTAURANT CREATE SECTION ========================== */
+
+#priceLabel {
+  height: 33px;
+}
+
+#foodLabel {
+  width: 100%;
+}
+
+#zip {
+  height: 34px;
 }
 
 /* =========================DEVISE SECTION ================================== */
