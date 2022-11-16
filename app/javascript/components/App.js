@@ -27,7 +27,7 @@ const App = (props) => {
         <Route path="/restaurantedit/:id" element={<RestaurantEdit />} />
         {/* Restaurant Review Routes */}
         <Route path="/restaurantreviewindex" element={<RestaurantReviewIndex />} />
-        <Route path="/restaurantreviewshow/:id" element={<RestaurantReviewShow />} />
+        <Route path="/restaurantreviewshow/:id" element={<RestaurantReviewShow {...props} reviews={mockReviews} />} />
         <Route path="/restaurantreviewnew" element={<RestaurantReviewNew />} />
         <Route path="/restaurantreviewsedit/:id" element={<RestaurantReviewEdit />} />
         {/* Unknown Link */}

@@ -14,7 +14,7 @@ const Home = ({
     <>
       {/* When logged out */}
       <div className="logged_out">
-        {logged_in === false && (
+        {!logged_in && (
           <>
             <h1>Let Us Choose What You Eat</h1>
             <Button
@@ -74,7 +74,7 @@ const Home = ({
 
       {/* When logged in */}
       <div className="logged_in">
-        {logged_in === true && (
+        {logged_in && (
           <>
             <h1>Welcome!</h1>
             <img

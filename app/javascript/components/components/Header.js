@@ -37,7 +37,7 @@ const Header = ({
               {/* Header Image */}
               <img src={"../assets/Risky Biscuit_Headerlogo.png"} />
             </IconButton>
-            {logged_in === true && (
+            {logged_in && (
               <div className="name-box">
                 Hi, {current_user?.first_name} {current_user?.last_name}
               </div>
@@ -46,7 +46,7 @@ const Header = ({
 
           <div className="navigation-links">
             {/* IF user is logged in, do NOT display Login and Sign-up Buttons */}
-            {logged_in === false && (
+            {!logged_in && (
               <>
                 <Button href="/restaurantindex" color="inherit">
                   See All Restaurants
@@ -66,7 +66,7 @@ const Header = ({
             )}
 
             {/* IF user is logged in, display Sign-Out Button */}
-            {logged_in === true && (
+            {logged_in && (
               <>
                 <Button href="/" color="inherit">
                   Home
