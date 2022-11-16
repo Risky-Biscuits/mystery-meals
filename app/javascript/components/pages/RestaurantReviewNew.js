@@ -11,10 +11,7 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const RestaurantReviewNew = ({ current_user, restaurants, createReview }) => {
   const { id } = useParams();
-  const currentRestaurant = restaurants?.find(
-    (restaurant) => restaurant.id === +id
-  );
-
+  
   const [newReview, setNewReview] = useState({
     review: "",
     rating: "",
@@ -41,13 +38,6 @@ const RestaurantReviewNew = ({ current_user, restaurants, createReview }) => {
   };
 
   const navigate = useNavigate();
-
-  console.log("CURRENT RESTAURANT", currentRestaurant);
-  console.log("CURRENT USER", current_user);
-  console.log("ID => ", id);
-  console.log("CURRENT RESTAURANT => ", currentRestaurant);
-  console.log("RESTAURANTS => ", restaurants);
-  console.log("NEW REVIEW => ", newReview);
 
   return (
     <div className="page-container">
