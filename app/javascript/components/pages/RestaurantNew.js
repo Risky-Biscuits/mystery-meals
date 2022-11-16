@@ -1,13 +1,8 @@
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Checkbox from "@mui/material/Checkbox";
 import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
-import InputAdornment from "@mui/material/InputAdornment";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import Paper from "@mui/material/Paper";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -30,13 +25,8 @@ const RestaurantNew = ({ createRestaurant }) => {
 
   console.log(newRestaurant);
   const handleChange = (e) => {
-    // if (e.target.name === "zip") {
-    //   console.log(e);
-    //   setNewRestaurant({ ...newRestaurant, [e.target.name]: parseInt(e.target.value) });
-    // } else {
     setNewRestaurant({ ...newRestaurant, [e.target.name]: e.target.value });
   };
-  // };
 
   const handleSubmit = () => {
     if (
@@ -237,10 +227,28 @@ const RestaurantNew = ({ createRestaurant }) => {
             mr: "170px",
           }}
         >
-          <Button variant="contained" onClick={handleSubmit}>
+          <Button
+            variant="contained"
+            sx={{
+              color: "white",
+              padding: "12px",
+              bgcolor: "#55AF4D",
+            }}
+            onClick={handleSubmit}
+          >
             Add Restaurant
           </Button>
-          <Button variant="contained">Cancel</Button>
+          <Button
+            variant="contained"
+            sx={{
+              color: "white",
+              padding: "12px",
+              bgcolor: "#55AF4D",
+            }}
+            href="/restaurantindex"
+          >
+            Cancel
+          </Button>
         </Grid>
       </Grid>
     </div>
