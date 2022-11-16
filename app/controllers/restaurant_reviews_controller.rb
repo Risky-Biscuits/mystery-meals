@@ -1,8 +1,8 @@
 class RestaurantReviewsController < ApplicationController
 
   def index
-    restaurant_review = RestaurantReview.all
-    render json: restaurant_review
+    restaurant_reviews = RestaurantReview.all
+    render json: restaurant_reviews
   end
 
   
