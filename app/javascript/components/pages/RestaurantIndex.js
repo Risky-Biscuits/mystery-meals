@@ -58,6 +58,10 @@ const RestaurantIndex = ({
                           Details
                         </Button>
                       </NavLink>
+                      <NavLink
+                        to={`/restaurantreviewshow/${restaurant.id}`}
+                        style={{ textDecoration: "none" }}
+                      >
                       <Button
                         variant="contained"
                         sx={{
@@ -66,8 +70,9 @@ const RestaurantIndex = ({
                           bgcolor: "#55AF4D",
                         }}
                       >
-                        Review
+                        Reviews
                       </Button>
+                      </NavLink>
                     </CardActions>
                   </Card>
                 </div>
