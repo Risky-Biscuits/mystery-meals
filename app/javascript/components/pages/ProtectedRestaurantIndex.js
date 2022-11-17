@@ -74,7 +74,7 @@ const ProtectedRestaurantIndex = ({
                               }}
                             >
                               REVIEW
-                            </Button>
+                            </Button>                         
                           </CardActions>
                         </Card>
                       </div>

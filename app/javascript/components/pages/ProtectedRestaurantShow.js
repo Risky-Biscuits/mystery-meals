@@ -6,18 +6,23 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { style } from "@mui/system";
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { Navigate, NavLink, useParams } from "react-router-dom";
 
 const ProtectedRestaurantShow = ({
   restaurants,
   logged_in,
   reviews,
   current_user,
+  deleteRestaurant,
 }) => {
   const { user_id, id } = useParams();
   const currentRestaurant = restaurants?.find(
     (restaurant) => restaurant.id === +id
   );
+
+  const handleDelete = () => {
+    deleteRestaurant( id )
+  }
   return (
     <>
       <h1>Restaurant Details</h1>
@@ -43,16 +48,22 @@ const ProtectedRestaurantShow = ({
           >
             REVIEW
           </Button>
-          <Button
-        variant="contained"
-        sx={{
-          color: "white",
-          padding: "12px",
-          bgcolor: "#55AF4D",
-        }}
-      >
-        DELETE
-      </Button>
+          <NavLink
+            to={`../protectedrestaurantindex`}
+            style={{ textDecoration: "none" }}
+          >
+            <Button
+              onClick={handleDelete}
+              variant="contained"
+              sx={{
+                color: "white",
+                padding: "12px",
+                bgcolor: "#55AF4D",
+              }}
+            >
+              DELETE
+            </Button>
+          </NavLink>
         </>
       )}
     </>
