@@ -4,7 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import MockUser from "../jest-tests/__mockUser__/MockUser";
 import mockRestaurants from "../mockRestaurants";
 import mockReviews from "../mockReviews";
-import ProtectedRestaurantIndex from "../pages/ProtectedRestaurantIndex";
+import ProtectedRestaurantIndex, { filterRestaurantsByUser } from "../pages/ProtectedRestaurantIndex";
+
 
 describe("<RestaurantIndex />", () => {
   it("renders without crashing", () => {
@@ -34,6 +35,13 @@ describe("<RestaurantIndex />", () => {
     screen.debug();
     expect(element).toBeInTheDocument()
   });
+
+
+  describe("filterRestaurantsByUser", () => {
+    it("filters data", () => {
+      expect(filterRestaurantsByUser(mockRestaurants, mockReviews, 1)).toEqual([mockRestaurants[0], mockRestaurants[1]])
+    });
+  })
 
   // ======= NEEDS RESEARCH ========
   // it("renders when user is logged in", () => {
