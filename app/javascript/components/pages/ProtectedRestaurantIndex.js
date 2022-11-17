@@ -7,6 +7,13 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+export const filterRestaurantsByUser = (restaurants, reviews, user_id) => {
+  const filteredReviews = reviews.filter((review) => review.user_id === user_id);
+  const restaurantIds = filteredReviews.map((review) => review.restaurant_id);
+  return restaurants.filter((restaurant) => restaurantIds.includes(restaurant.id)
+  );
+};
+
 const ProtectedRestaurantIndex = ({
   logged_in,
   restaurants,
@@ -20,72 +27,62 @@ const ProtectedRestaurantIndex = ({
         <>
           <h1>See All Restaurants</h1>
           <div className="card-container">
-            {reviews
-              .filter((review) => review.user_id === current_user.id)
-              .map((review) => {
-                return restaurants
-                  .filter(
-                    (restaurant) => restaurant.id === review.restaurant_id
-                  )
-                  .map((restaurant, index) => {
-                    return (
-                      <div key={index}>
-                        <Card
-                          elevation={24}
-                          sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+            {filterRestaurantsByUser(restaurants, reviews, current_user.id).map(
+              (restaurant, index) => {
+                return (
+                  <div key={index}>
+                    <Card
+                      elevation={24}
+                      sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+                    >
+                      <CardMedia
+                        component="img"
+                        height="340"
+                        image={restaurant.image}
+                        alt="restaurant"
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                          {restaurant.name}
+                        </Typography>
+                      </CardContent>
+                      <CardActions>
+                        <NavLink
+                          to={`/protectedrestaurantshow/${current_user.id}/${restaurant.id}`}
+                          style={{ textDecoration: "none" }}
                         >
-                          <CardMedia
-                            component="img"
-                            height="340"
-                            image={restaurant.image}
-                            alt="restaurant"
-                          />
-                          <CardContent>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="div"
-                            >
-                              {restaurant.name}
-                            </Typography>
-                          </CardContent>
-                          <CardActions>
-                            <NavLink
-                              to={`/protectedrestaurantshow/${current_user.id}/${restaurant.id}`}
-                              style={{ textDecoration: "none" }}
-                            >
-                              <Button
-                                variant="contained"
-                                sx={{
-                                  color: "white",
-                                  padding: "12px",
-                                  bgcolor: "#55AF4D",
-                                }}
-                              >
-                                DETAILS
-                              </Button>
-                            </NavLink>
-                            <NavLink
-                              to={`/restaurantreviewnew/:id`}
-                              style={{ textDecoration: "none" }}
-                            >
-                              <Button
-                                variant="contained"
-                                sx={{
-                                  color: "white",
-                                  padding: "12px",
-                                  bgcolor: "#55AF4D",
-                                }}
-                              >
-                                ADD REVIEW
-                              </Button>
-                            </NavLink>
-                          </CardActions>
-                        </Card>
-                      </div>
-                    );
-                  });
-              })}
+                          <Button
+                            variant="contained"
+                            sx={{
+                              color: "white",
+                              padding: "12px",
+                              bgcolor: "#55AF4D",
+                            }}
+                          >
+                            DETAILS
+                          </Button>
+                        </NavLink>
+                        <NavLink
+                          to={`/restaurantreviewnew/:id`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Button
+                            variant="contained"
+                            sx={{
+                              color: "white",
+                              padding: "12px",
+                              bgcolor: "#55AF4D",
+                            }}
+                          >
+                            ADD REVIEW
+                          </Button>
+                        </NavLink>
+                      </CardActions>
+                    </Card>
+                  </div>
+                );
+              }
+            )}
           </div>
         </>
       )}
