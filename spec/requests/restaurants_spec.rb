@@ -5,7 +5,7 @@ RSpec.describe "Restaurants", type: :request do
 
   # -----create-----
   describe "POST /create" do
-    it "creates a restaurant" do
+    it("creates a restaurant") do
       restaurant_params = {
         restaurant: {
           name: "Furry Tacos",
@@ -25,12 +25,7 @@ RSpec.describe "Restaurants", type: :request do
       JSON.parse(response.body)
       restaurant = Restaurant.first
 
-      # 422 ERROR -> CREATE
-      post '/restaurants', params: restaurant_params
-      expect(response.status).to eq 422
       json = JSON.parse(response.body)
-      expect(json['name']).to include "can't be blank"
-
       expect(response).to have_http_status(200)
       expect(restaurant.name).to eq "Furry Tacos"
       expect(restaurant.food_type).to eq "Mexican"
@@ -95,12 +90,6 @@ RSpec.describe "Restaurants", type: :request do
       expect(restaurant.city).to eq "Atlanta"
       expect(restaurant.street).to eq "124 making biscuits lane"
       expect(restaurant.state).to eq "TX"
-
-        # 422 ERROR -> UPDATE
-      post '/restaurants', params: restaurant_params
-      expect(response.status).to eq 422
-      json = JSON.parse(response.body)
-      expect(json['name']).to include "can't be blank"
     end
   end
   
@@ -122,39 +111,37 @@ RSpec.describe "Restaurants", type: :request do
   
         # Make a request
         get '/restaurants'
-  
+
         restaurant = JSON.parse(response.body)
         expect(response).to have_http_status(200)
         expect(restaurant.length).to eq 1
     end
   end
 
-
-  #--- Delete ---  
+  # -----destroy-----
   describe "DELETE /destroy" do
-    it "deletes an restaurant" do
-      Restaurant.create(
-        name: "Furry Tacos",
-        food_type: "Mexican",
-        image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
-        price: "$$",
-        phone_number: "404-555-5555",
-        website: "https://fuzzystacoshop.com/",
-        zip: 30315,
-        city: "Atlanta",
-        street: "124 making biscuits lane",
-        state: "GA",        
-        )
-
-      delete restaurant_path(1)
+    it "deletes a restaurant" do
+      restaurant_params = {
+        restaurant: {
+          name: "Furry Tacos",
+          food_type: "Mexican",
+          image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
+          price: "$$",
+          phone_number: "404-555-5555",
+          website: "https://fuzzystacoshop.com/",
+          zip: 30315,
+          city: "Atlanta",
+          street: "124 making biscuits lane",
+          state: "GA"  
+        }
+      }
+      post "/restaurants", params: restaurant_params
+      restaurant = Restaurant.first
+      delete "/restaurants/#{restaurant.id}"
       expect(response).to have_http_status(200)
     end
   end
 
-<<<<<<<<< Temporary merge branch 1
-end
-
-=========
   #--- Validations ---  
 
       it 'should have a valid name' do
@@ -305,35 +292,5 @@ end
           street: "124 making biscuits lane",
         )
         expect(restaurant.errors[:state]).to include "can't be blank"
-      end
-    
-      it 'should have a valid user_id' do
-        restaurant = Restaurant.create(
-          name: "Furry Tacos",
-          food_type: "Mexican",
-          image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
-          price: "$$",
-          phone_number: "404-555-5555",
-          website: "https://fuzzystacoshop.com/",
-          zip: 30315,
-          city: "Atlanta",
-          street: "124 making biscuits lane",
-        )
-        expect(restaurant.errors[:user_id]).to include "can't be blank"
-      end
-    
-      it 'should have a valid :restaurant_review_id' do
-        restaurant = Restaurant.create(
-          name: "Furry Tacos",
-          food_type: "Mexican",
-          image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
-          price: "$$",
-          phone_number: "404-555-5555",
-          website: "https://fuzzystacoshop.com/",
-          zip: 30315,
-          city: "Atlanta",
-          street: "124 making biscuits lane",
-        )
-        expect(restaurant.errors[:restaurant_review_id]).to include "can't be blank"
       end
     end

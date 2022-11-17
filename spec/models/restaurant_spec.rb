@@ -153,36 +153,6 @@ RSpec.describe Restaurant, type: :model do
     )
     expect(restaurant.errors[:state]).to include "can't be blank"
   end
-
-  it 'should have a valid user_id' do
-    restaurant = Restaurant.create(
-      name: "Furry Tacos",
-      food_type: "Mexican",
-      image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
-      price: "$$",
-      phone_number: "404-555-5555",
-      website: "https://fuzzystacoshop.com/",
-      zip: 30315,
-      city: "Atlanta",
-      street: "124 making biscuits lane",
-    )
-    expect(restaurant.errors[:user_id]).to include "can't be blank"
-  end
-
-  it 'should have a valid :restaurant_review_id' do
-    restaurant = Restaurant.create(
-      name: "Furry Tacos",
-      food_type: "Mexican",
-      image: "https://pbs.twimg.com/profile_images/535195288093200384/gNY6HIXg_400x400.jpeg",
-      price: "$$",
-      phone_number: "404-555-5555",
-      website: "https://fuzzystacoshop.com/",
-      zip: 30315,
-      city: "Atlanta",
-      street: "124 making biscuits lane",
-    )
-    expect(restaurant.errors[:restaurant_review_id]).to include "can't be blank"
-  end
 end
 
 
