@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const ProtectedRestaurantIndex = ({
   logged_in,
@@ -49,8 +50,31 @@ const ProtectedRestaurantIndex = ({
                             </Typography>
                           </CardContent>
                           <CardActions>
-                            <Button size="small">Details</Button>
-                            <Button size="small">Reviews</Button>
+                            <NavLink
+                              to={`/protectedrestaurantshow/${current_user.id}/${restaurant.id}`}
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Button
+                                variant="contained"
+                                sx={{
+                                  color: "white",
+                                  padding: "12px",
+                                  bgcolor: "#55AF4D",
+                                }}
+                              >
+                                DETAILS
+                              </Button>
+                            </NavLink>
+                            <Button
+                              variant="contained"
+                              sx={{
+                                color: "white",
+                                padding: "12px",
+                                bgcolor: "#55AF4D",
+                              }}
+                            >
+                              REVIEW
+                            </Button>
                           </CardActions>
                         </Card>
                       </div>
