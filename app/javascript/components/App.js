@@ -15,6 +15,7 @@ import RestaurantReviewIndex from "./pages/RestaurantReviewIndex";
 import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
+import ProtectedRestaurantShow from "./pages/ProtectedRestaurantShow"
 
 const App = (props) => {
   const [restaurants, setRestaurants] = useState([]);
@@ -57,6 +58,7 @@ const App = (props) => {
         <Route path="/restaurantindex" element={<RestaurantIndex {...props} restaurants={restaurants} />} />
         <Route path="/protectedrestaurantindex" element={<ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
         <Route path="/restaurantshow/:id" element={<RestaurantShow {...props} restaurants={mockRestaurants}/>} />
+        <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
         <Route path="/restaurantnew" element={<RestaurantNew createRestaurant={createRestaurant} />} />
         <Route path="/restaurantedit/:id" element={<RestaurantEdit />} />
         {/* Restaurant Review Routes */}
