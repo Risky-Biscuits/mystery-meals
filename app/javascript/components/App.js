@@ -7,6 +7,7 @@ import mockReviews from "./mockReviews";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProtectedRestaurantIndex from "./pages/ProtectedRestaurantIndex";
+import ProtectedRestaurantShow from "./pages/ProtectedRestaurantShow";
 import RestaurantEdit from "./pages/RestaurantEdit";
 import RestaurantIndex from "./pages/RestaurantIndex";
 import RestaurantNew from "./pages/RestaurantNew";
@@ -15,7 +16,6 @@ import RestaurantReviewIndex from "./pages/RestaurantReviewIndex";
 import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
-import ProtectedRestaurantShow from "./pages/ProtectedRestaurantShow"
 
 const App = (props) => {
   const [restaurants, setRestaurants] = useState([]);
@@ -50,6 +50,24 @@ const App = (props) => {
       .then((response) => response.json())
       .then(() => readRestaurant())
       .catch((errors) => console.log("Restaurant create errors:", errors));
+  };
+
+  const updateRestaurant = (restaurant, id) => {
+    fetch(`http://localhost:3000/restaurants/${id}`, {
+      // converting an object to a string
+      body: JSON.stringify(restaurant),
+      // specify the info being sent in JSON and the info returning should be JSON
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // HTTP verb so the correct endpoint is invoked on the server
+      method: "PATCH",
+    })
+      .then((response) => {
+        response.json();
+      })
+      .then(() => readRestaurant())
+      .catch((errors) => console.log("Restaurant update errors:", errors));
   };
 
   // ========================= REVIEW SECTION ====================================
@@ -111,7 +129,7 @@ const App = (props) => {
         <Route 
           path="/restaurantedit/:id" 
           element={
-            <RestaurantEdit />
+            <RestaurantEdit  restaurants={restaurants} updateRestaurant={updateRestaurant}/>
           } 
         />
 
