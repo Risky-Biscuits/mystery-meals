@@ -79,6 +79,20 @@ const App = (props) => {
   console.log("APP.js restaurants => ", restaurants);
   console.log("APP.js reviews => ", reviews);
 
+  // ========================= DELETE SECTION ====================================
+
+  const deleteRestaurant = ( id ) => {
+    fetch(`http://localhost:3000/restaurantshow/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+      .then((response) => response.json())
+      .then((payload) => readRestaurant())
+      .catch((errors) => console.log("delete Errors:", errors))
+  }
+
   return (
     <BrowserRouter>
       <Header {...props} />
@@ -92,16 +106,16 @@ const App = (props) => {
         <Route
           path="/protectedrestaurantindex"
           element={
-            <ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} reviews={mockReviews} />
+            <ProtectedRestaurantIndex {...props} restaurants={restaurants} reviews={reviews} />
           }
         />
         <Route
           path="/restaurantshow/:id"
           element={
-            <RestaurantShow {...props} restaurants={mockRestaurants} />
+            <RestaurantShow {...props} restaurants={restaurants} />
           }
         />
-        <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
+        <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={restaurants} reviews={reviews} deleteRestaurant={deleteRestaurant} />} />
         <Route
           path="/restaurantnew"
           element={
