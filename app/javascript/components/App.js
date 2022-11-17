@@ -157,7 +157,7 @@ const App = (props) => {
         <Route
           path="/restaurantreviewshow/:id"
           element={
-            <RestaurantReviewShow {...props} reviews={mockReviews} restaurants={mockRestaurants} />
+            <RestaurantReviewShow {...props} reviews={reviews} restaurants={restaurants} />
           }
         />
         <Route
