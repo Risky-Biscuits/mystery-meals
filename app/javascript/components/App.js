@@ -100,7 +100,7 @@ const App = (props) => {
   // ========================= DELETE SECTION ====================================
 
   const deleteRestaurant = ( id ) => {
-    fetch(`http://localhost:3000/restaurantshow/${id}`, {
+    fetch(`http://localhost:3000/restaurants/${id}`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -157,7 +157,7 @@ const App = (props) => {
         <Route
           path="/restaurantreviewshow/:id"
           element={
-            <RestaurantReviewShow {...props} reviews={mockReviews} restaurants={mockRestaurants} />
+            <RestaurantReviewShow {...props} reviews={reviews} restaurants={restaurants} />
           }
         />
         <Route
