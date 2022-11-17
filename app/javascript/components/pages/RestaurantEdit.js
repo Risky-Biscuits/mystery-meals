@@ -28,8 +28,6 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
     state: currentRestaurant?.state,
   });
 
-  console.log(editRestaurant);
-
   const handleChange = (e) => {
     setEditRestaurant({ ...editRestaurant, [e.target.name]: e.target.value });
   };
