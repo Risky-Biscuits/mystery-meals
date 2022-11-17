@@ -78,6 +78,10 @@ p {
   height: 34px;
 }
 
+/* ===================== REVIEW CREATE SECTION ========================== */
+#review {
+  width: 600px;
+}
 /* =========================DEVISE SECTION ================================== */
 /* Refer to /app/views/devise/
 

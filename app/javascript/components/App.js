@@ -19,11 +19,14 @@ import ProtectedRestaurantShow from "./pages/ProtectedRestaurantShow"
 
 const App = (props) => {
   const [restaurants, setRestaurants] = useState([]);
-  
+  const [reviews, setReviews] = useState([]);
+
   useEffect(() => {
     readRestaurant();
+    readReview();
   }, []);
 
+  // ========================= RESTAURANT SECTION ================================
   const readRestaurant = () => {
     fetch("http://localhost:3000/restaurants")
       .then((response) => response.json())
@@ -49,25 +52,101 @@ const App = (props) => {
       .catch((errors) => console.log("Restaurant create errors:", errors));
   };
 
+  // ========================= REVIEW SECTION ====================================
+  const createReview = (review) => {
+    fetch("http://localhost:3000/restaurant_reviews", {
+      body: JSON.stringify(review),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then(() => readReview())
+      .catch((errors) => console.log("Review create errors:", errors));
+  };
+
+  const readReview = () => {
+    fetch("http://localhost:3000/restaurant_reviews")
+      .then((response) => response.json())
+      .then((payload) => {
+        setReviews(payload);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  // Used to verify data is being processed correctly
+  console.log("APP.js restaurants => ", restaurants);
+  console.log("APP.js reviews => ", reviews);
+
   return (
     <BrowserRouter>
       <Header {...props} />
       <Routes>
         <Route exact path="/" element={<Home {...props} />} />
         {/* Restaurant Routes */}
-        <Route path="/restaurantindex" element={<RestaurantIndex {...props} restaurants={restaurants} />} />
-        <Route path="/protectedrestaurantindex" element={<ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
-        <Route path="/restaurantshow/:id" element={<RestaurantShow {...props} restaurants={mockRestaurants}/>} />
+        <Route
+          path="/restaurantindex"
+          element={<RestaurantIndex {...props} restaurants={restaurants} />}
+        />
+        <Route
+          path="/protectedrestaurantindex"
+          element={
+            <ProtectedRestaurantIndex {...props} restaurants={mockRestaurants} reviews={mockReviews} />
+          }
+        />
+        <Route
+          path="/restaurantshow/:id"
+          element={
+            <RestaurantShow {...props} restaurants={mockRestaurants} />
+          }
+        />
         <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={mockRestaurants} reviews={mockReviews}/>} />
-        <Route path="/restaurantnew" element={<RestaurantNew createRestaurant={createRestaurant} />} />
-        <Route path="/restaurantedit/:id" element={<RestaurantEdit />} />
+        <Route
+          path="/restaurantnew"
+          element={
+            <RestaurantNew createRestaurant={createRestaurant} />
+          }
+        />
+        <Route 
+          path="/restaurantedit/:id" 
+          element={
+            <RestaurantEdit />
+          } 
+        />
+
         {/* Restaurant Review Routes */}
-        <Route path="/restaurantreviewindex" element={<RestaurantReviewIndex />} />
-        <Route path="/restaurantreviewshow/:id" element={<RestaurantReviewShow {...props} reviews={mockReviews} restaurants={mockRestaurants}/>} />
-        <Route path="/restaurantreviewnew" element={<RestaurantReviewNew />} />
-        <Route path="/restaurantreviewsedit/:id" element={<RestaurantReviewEdit />} />
+        <Route
+          path="/restaurantreviewindex"
+          element={
+            <RestaurantReviewIndex />
+          }
+        />
+        <Route
+          path="/restaurantreviewshow/:id"
+          element={
+            <RestaurantReviewShow {...props} reviews={mockReviews} restaurants={mockRestaurants} />
+          }
+        />
+        <Route
+          path="/restaurantreviewnew/:id"
+          element={
+            <RestaurantReviewNew {...props} createReview={createReview} restaurants={restaurants} />
+          }
+        />
+        <Route
+          path="/restaurantreviewedit/:id"
+          element={
+            <RestaurantReviewEdit />
+          }
+        />
         {/* Unknown Link */}
-        <Route path="*" element={<NotFound />} />
+        <Route 
+          path="*" 
+          element={
+          <NotFound />
+          } 
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
