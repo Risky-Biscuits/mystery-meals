@@ -66,7 +66,7 @@ const ProtectedRestaurantIndex = ({
                               </Button>
                             </NavLink>
                             <NavLink
-                              to={`/restaurantreviewnew/:id`}
+                              to={`/restaurantreviewnew/${restaurant.id}`}
                               style={{ textDecoration: "none" }}
                             >
                               <Button
