@@ -65,16 +65,21 @@ const ProtectedRestaurantIndex = ({
                                 DETAILS
                               </Button>
                             </NavLink>
-                            <Button
-                              variant="contained"
-                              sx={{
-                                color: "white",
-                                padding: "12px",
-                                bgcolor: "#55AF4D",
-                              }}
+                            <NavLink
+                              to={`/restaurantreviewnew/:id`}
+                              style={{ textDecoration: "none" }}
                             >
-                              REVIEW
-                            </Button>                         
+                              <Button
+                                variant="contained"
+                                sx={{
+                                  color: "white",
+                                  padding: "12px",
+                                  bgcolor: "#55AF4D",
+                                }}
+                              >
+                                ADD REVIEW
+                              </Button>
+                            </NavLink>
                           </CardActions>
                         </Card>
                       </div>
