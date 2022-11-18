@@ -1,4 +1,6 @@
-import { AddCircleOutline, CancelPresentationRounded } from '@mui/icons-material/';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CancelPresentationRounded from '@mui/icons-material/CancelPresentationRounded';
+
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
@@ -237,7 +239,7 @@ const RestaurantNew = ({ createRestaurant }) => {
             }}
             onClick={handleSubmit}
           >
-          <AddCircleOutline/>&nbsp;Add Restaurant
+          <AddCircleOutlineIcon/>&nbsp;Add Restaurant
           </Button>
           <Button
             variant="contained"

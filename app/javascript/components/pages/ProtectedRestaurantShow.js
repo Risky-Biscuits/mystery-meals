@@ -1,17 +1,15 @@
-import {
-  Delete,
-  Phone,
-  RateReview,
-  Restaurant,
-  Savings
-} from "@mui/icons-material";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography
-} from "@mui/material";
+import Delete from "@mui/icons-material/Delete";
+import Phone from "@mui/icons-material/Phone";
+import RateReview from "@mui/icons-material/RateReview";
+import Restaurant from "@mui/icons-material/Restaurant";
+import Savings from "@mui/icons-material/Savings";
+
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+
 
 import React from "react";
 import { NavLink, useParams } from "react-router-dom";
