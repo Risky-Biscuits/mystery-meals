@@ -63,7 +63,7 @@ const ProtectedRestaurantIndex = ({
                           </Button>
                         </NavLink>
                         <NavLink
-                          to={`/restaurantreviewnew/:id`}
+                          to={`/restaurantreviewshow/${restaurant.id}`}
                           style={{ textDecoration: "none" }}
                         >
                           <Button
@@ -74,7 +74,7 @@ const ProtectedRestaurantIndex = ({
                               bgcolor: "#55AF4D",
                             }}
                           >
-                            ADD REVIEW
+                            REVIEWS
                           </Button>
                         </NavLink>
                       </CardActions>
