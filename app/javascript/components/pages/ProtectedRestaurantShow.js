@@ -139,7 +139,7 @@ const ProtectedRestaurantShow = ({
                         variant="h7"
                         component="div"
                       >
-                        <a href={`${currentRestaurant.website}`}>
+                        <a href={`${currentRestaurant.website}`} target="_blank">
                           Visit Their Website{" "}
                         </a>
                       </Typography>
@@ -151,18 +151,6 @@ const ProtectedRestaurantShow = ({
           </Card>
 
           <div className="horizontal-flex-container">
-            <Button
-              variant="contained"
-              sx={{
-                color: "white",
-                padding: "12px",
-                bgcolor: "#55AF4D",
-              }}
-            >
-              <RateReview />
-              &nbsp;REVIEW RESTAURANT
-            </Button>
-            &nbsp; &nbsp;
             <NavLink
               to={`../protectedrestaurantindex`}
               style={{ textDecoration: "none" }}

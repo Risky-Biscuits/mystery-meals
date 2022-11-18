@@ -125,7 +125,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                       variant="h7"
                       component="div"
                     >
-                      <a href={`${currentRestaurant.website}`}>
+                      <a href={`${currentRestaurant.website}`} target="_blank">
                         Visit Their Website{" "}
                       </a>
                     </Typography>

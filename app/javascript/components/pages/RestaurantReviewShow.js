@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@mui/material/Button";
 import { NavLink, useParams } from "react-router-dom";
 
 const RestaurantReviewShow = ({ reviews, restaurants }) => {
@@ -38,6 +39,21 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
           <p>Rating: {currentReview.rating}</p>
         </>
       )}
+      <NavLink
+        to={`/restaurantreviewnew/${id}`}
+        style={{ textDecoration: "none" }}
+      >
+        <Button
+          variant="contained"
+          sx={{
+            color: "white",
+            padding: "12px",
+            bgcolor: "#55AF4D",
+          }}
+        >
+          ADD REVIEW
+        </Button>
+      </NavLink>
     </>
   );
 };
