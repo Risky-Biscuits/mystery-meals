@@ -1,3 +1,4 @@
+import { AddCircleOutline, CancelPresentationRounded } from '@mui/icons-material/';
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
@@ -72,6 +73,9 @@ const RestaurantNew = ({ createRestaurant }) => {
           <Grid item xs={6}>
             <TextField
               onChange={handleChange}
+              inputProps={{
+                maxLength: 10,
+              }}
               required
               id="name"
               name="name"
@@ -216,15 +220,12 @@ const RestaurantNew = ({ createRestaurant }) => {
             />
           </Grid>
         </Grid>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}></Grid>
-        </Grid>
         <Grid
           sx={{
             display: "flex",
             justifyContent: "left",
             gap: "15px",
-            mr: "170px",
+            mr: "110px",
           }}
         >
           <Button
@@ -236,7 +237,7 @@ const RestaurantNew = ({ createRestaurant }) => {
             }}
             onClick={handleSubmit}
           >
-            Add Restaurant
+          <AddCircleOutline/>&nbsp;Add Restaurant
           </Button>
           <Button
             variant="contained"
@@ -247,7 +248,8 @@ const RestaurantNew = ({ createRestaurant }) => {
             }}
             href="/restaurantindex"
           >
-            Cancel
+           <CancelPresentationRounded/>&nbsp;Cancel
+
           </Button>
         </Grid>
       </Grid>
