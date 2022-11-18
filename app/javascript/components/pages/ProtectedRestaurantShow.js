@@ -1,17 +1,23 @@
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { style } from "@mui/system";
+import {
+  Delete,
+  Phone,
+  RateReview,
+  Restaurant,
+  Savings
+} from "@mui/icons-material";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography
+} from "@mui/material";
+
 import React from "react";
-import { Navigate, NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const ProtectedRestaurantShow = ({
   restaurants,
-  logged_in,
-  reviews,
   current_user,
   deleteRestaurant,
 }) => {
@@ -21,39 +27,131 @@ const ProtectedRestaurantShow = ({
   );
 
   const handleDelete = () => {
-    deleteRestaurant( id )
-  }
+    deleteRestaurant(id);
+  };
+
   return (
-    <>
+    <div className="page-container">
       <h1>Restaurant Details</h1>
-      {current_user.id === parseInt(user_id) && currentRestaurant &&(
+      {current_user.id === parseInt(user_id) && currentRestaurant && (
         <>
-          <h3>{currentRestaurant.name}</h3>
-          <img src={currentRestaurant.image} />
-          <p>{currentRestaurant.food_type}</p>
-          <p>{currentRestaurant.price}</p>
-          <p>{currentRestaurant.phone_number}</p>
-          <p>{currentRestaurant.website}</p>
-          <p>{currentRestaurant.street}</p>
-          <p>{currentRestaurant.city}</p>
-          <p>{currentRestaurant.state}</p>
-          <p>{currentRestaurant.zip}</p>
-          <Button
-            variant="contained"
-            sx={{
-              color: "white",
-              padding: "12px",
-              bgcolor: "#55AF4D",
-            }}
+          <Card
+            elevation={24}
+            sx={{ width: 650, border: "5px solid #AD8350", mb: "1rem" }}
           >
-            REVIEW
-          </Button>
-          <NavLink
-            to={`../protectedrestaurantindex`}
-            style={{ textDecoration: "none" }}
-          >
+            <CardMedia
+              component="img"
+              height="400px"
+              image={currentRestaurant.image}
+              alt="restaurant"
+            />
+            <div className="show-card-container">
+              <CardContent>
+                <CardContent>
+                  <Typography
+                    sx={{ fontWeight: "bold" }}
+                    gutterBottom
+                    variant="h4"
+                    component="div"
+                  >
+                    <Restaurant /> {currentRestaurant.name}
+                  </Typography>
+                  <div className="show-card-container">
+                    <div className="show-card-info">
+                      <Typography
+                        sx={{ fontSize: "1.4rem", fontWeight: "bold" }}
+                        gutterBottom
+                        variant="h7"
+                        component="div"
+                      >
+                        {currentRestaurant.food_type}
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: "1.2rem" }}
+                        gutterBottom
+                        variant="h7"
+                        component="div"
+                      >
+                        <Savings sx={{ verticalAlign: "bottom" }} />{" "}
+                        {currentRestaurant.price}
+                      </Typography>
+                      <Typography
+                        sx={{ fontSize: "1.2rem" }}
+                        gutterBottom
+                        variant="h7"
+                        component="div"
+                      >
+                        <Phone sx={{ verticalAlign: "bottom" }} />{" "}
+                        {currentRestaurant.phone_number}
+                      </Typography>
+
+                      <div className="card-address-container">
+                        <Typography
+                          sx={{ fontSize: "1.2rem", fontWeight: "bold" }}
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                        >
+                          Address:
+                        </Typography>
+
+                        <Typography
+                          sx={{ fontSize: "1.2rem" }}
+                          gutterBottom
+                          variant="h7"
+                          component="div"
+                        >
+                          {currentRestaurant.street}
+                        </Typography>
+                        <div className="horizontal-flex-container">
+                          <Typography
+                            sx={{ fontSize: "1.2rem" }}
+                            gutterBottom
+                            variant="h7"
+                            component="div"
+                          >
+                            {currentRestaurant.city},
+                          </Typography>
+                          &nbsp;
+                          <Typography
+                            sx={{ fontSize: "1.2rem" }}
+                            gutterBottom
+                            variant="h7"
+                            component="div"
+                          >
+                            {currentRestaurant.state}
+                          </Typography>
+                          &nbsp;
+                          <Typography
+                            sx={{ fontSize: "1.2rem" }}
+                            gutterBottom
+                            variant="h7"
+                            component="div"
+                          >
+                            {currentRestaurant.zip}
+                          </Typography>
+                        </div>
+                      </div>
+
+                      <Typography
+                        sx={{ fontSize: "1.2rem" }}
+                        gutterBottom
+                        variant="h7"
+                        component="div"
+                      >
+                        <a href={`${currentRestaurant.website}`}>
+                          Visit Their Website{" "}
+                        </a>
+                      </Typography>
+                    </div>
+                  </div>
+                </CardContent>
+              </CardContent>
+            </div>
+          </Card>
+
+          <div className="horizontal-flex-container">
             <Button
-              onClick={handleDelete}
               variant="contained"
               sx={{
                 color: "white",
@@ -61,12 +159,31 @@ const ProtectedRestaurantShow = ({
                 bgcolor: "#55AF4D",
               }}
             >
-              DELETE
+              <RateReview />
+              &nbsp;REVIEW RESTAURANT
             </Button>
-          </NavLink>
+            &nbsp; &nbsp;
+            <NavLink
+              to={`../protectedrestaurantindex`}
+              style={{ textDecoration: "none" }}
+            >
+              <Button
+                onClick={handleDelete}
+                variant="contained"
+                sx={{
+                  color: "white",
+                  padding: "12px",
+                  bgcolor: "#55AF4D",
+                }}
+              >
+                <Delete />
+                &nbsp;REMOVE RESTAURANT
+              </Button>
+            </NavLink>
+          </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
