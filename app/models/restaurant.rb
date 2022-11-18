@@ -12,6 +12,8 @@ class Restaurant < ApplicationRecord
   validates :city, presence: true
   validates :street, presence: true
   validates :state, presence: true
+
+  validates :name, length: { maximum: 10 }
 end
 
 
