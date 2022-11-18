@@ -15,53 +15,111 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
   );
 
   return (
-    <>
+    <div className="page-container">
       <h1>Restaurant Details</h1>
-      {currentRestaurant && (
-        <>
-          <h3>{currentRestaurant.name}</h3>
-          <img src={currentRestaurant.image} />
-          <p>{currentRestaurant.food_type}</p>
-          <p>{currentRestaurant.price}</p>
-          <p>{currentRestaurant.phone_number}</p>
-          <p>{currentRestaurant.website}</p>
-          <p>{currentRestaurant.street}</p>
-          <p>{currentRestaurant.city}</p>
-          <p>{currentRestaurant.state}</p>
-          <p>{currentRestaurant.zip}</p>
-        </>
-      )}
-{/* ------------------------------ ⬇️ When Logged In ⬇️ ------------------------------------- */}
-      {logged_in && (
-      <Button
-        variant="contained"
-        sx={{
-          color: "white",
-          padding: "12px",
-          bgcolor: "#55AF4D",
-        }}
-      >
-        REVIEW
-      </Button>
-      )}
-{/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
 
-{/* ------------------------------ ⬇️ When Logged Out ⬇️ ------------------------------------- */}
+      <Card elevation={24} sx={{ width: 500, border: "5px solid #AD8350", mb: "1rem" }}>
+        <CardMedia
+          component="img"
+          height="500px"
+          image={currentRestaurant?.image}
+          alt="restaurant"
+        />
+        <CardContent>
+          <CardContent>
+            <Typography
+              sx={{ fontWeight: "bold" }}
+              gutterBottom
+              variant="h4"
+              component="div"
+            >
+              {currentRestaurant?.name}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              {currentRestaurant?.food_type}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              Price-Range: {currentRestaurant?.price}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              Phone: {currentRestaurant?.phone_number}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              Address: {currentRestaurant?.street}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              City: {currentRestaurant?.city}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              State: {currentRestaurant?.state}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              Zip Code: {currentRestaurant?.zip}
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.2rem" }}
+              gutterBottom
+              variant="h7"
+              component="div"
+            >
+              <a href={`${currentRestaurant?.website}`}>Visit Their Website </a>
+            </Typography>
+          </CardContent>
+        </CardContent>
+        <CardActions></CardActions>
+      </Card>
+
+      {/* ------------------------------ ⬇️ When Logged Out ⬇️ ------------------------------------- */}
       {!logged_in && (
-        <NavLink to={`..`} style={{ textDecoration: "none"}}>
-        <Button
-          variant="contained"
-          sx={{
-            color: "white",
-            padding: "12px",
-            bgcolor: "#55AF4D",
-          }}
-        >
-          HOME
-        </Button>
+        <NavLink to={`..`} style={{ textDecoration: "none" }}>
+          <Button
+            variant="contained"
+            sx={{
+              color: "white",
+              padding: "12px",
+              bgcolor: "#55AF4D",
+            }}
+          >
+            HOME
+          </Button>
         </NavLink>
-        )}
-{/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
+      )}
+      {/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
 
       <NavLink to={`/restaurantindex`} style={{ textDecoration: "none" }}>
         <Button
@@ -75,7 +133,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
           BACK TO ALL RESTAURANTS
         </Button>
       </NavLink>
-    </>
+    </div>
   );
 };
 
