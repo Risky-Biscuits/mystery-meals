@@ -4,7 +4,19 @@ import { NavLink, useParams } from "react-router-dom";
 
 const RestaurantReviewShow = ({ reviews, restaurants }) => {
   const { id } = useParams();
-  const currentReview = reviews?.find((review) => review.id === +id);
+  const currentReviews = reviews?.filter(
+    (review) => review.restaurant_id === parseInt(id) && review.rating !== null
+  );
+
+  //using currentReviews, make a variable called averageReviewRating
+  let averageReviewRating = 0;
+  let totalReviewRating = 0;
+  let lengthOfReviews = currentReviews.length;
+
+  for (let i = 0; i < currentReviews.length; i++) {
+    totalReviewRating += currentReviews[i].rating;
+  }
+  averageReviewRating = totalReviewRating / lengthOfReviews;
 
   const currentRestaurant = restaurants?.find(
     (restaurant) => restaurant.id === +id
@@ -26,17 +38,46 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
           <p>{currentRestaurant.state}</p>
           <p>{currentRestaurant.zip}</p>
           <br></br>
-          <p>"{currentReview.review}"</p>
-          {currentReview.rating >= 4 && (
-            <img src={require("../assets/new_good.png")} />
-          )}
-          {currentReview.rating === 3 && (
-            <img src={require("../assets/new_mid.png")} />
-          )}
-          {currentReview.rating < 3 && (
-            <img src={require("../assets/new_bad.png")} />
-          )}
-          <p>Rating: {currentReview.rating}</p>
+          <p id="averageRestaurantReview">
+            {averageReviewRating >= 4 && (
+              <img src={require("../assets/new_good.png")} />
+            )}
+            {averageReviewRating === 3 && (
+              <img src={require("../assets/new_mid.png")} />
+            )}
+            {averageReviewRating < 3 && (
+              <img src={require("../assets/new_bad.png")} />
+            )}
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Review</th>
+                <th>Rating</th>
+                <th>Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentReviews.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.review}</td>
+                  <td>
+                    <div className="star-rating">
+                      {[...Array(item.rating)].map((star, index) => {
+                        index += 1;
+                        return <span className="star">&#9733;</span>;
+                      })}
+                      {[...Array(5-item.rating)].map((star, index) => {
+                        index += 1;
+                        return <span className="star">&#9734;</span>;
+                      })}
+                    </div>
+                  </td>
+                  <td>hi</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </>
       )}
       <NavLink
