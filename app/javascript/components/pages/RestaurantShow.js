@@ -12,7 +12,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
     <div className="page-container">
       <h1>Restaurant Details</h1>
 
-      <Card elevation={24} sx={{ width: 500, border: "5px solid #AD8350", mb: "1rem" }}>
+      <Card elevation={24} sx={{ width: 900, border: "5px solid #AD8350", mb: "1rem" }}>
         <CardMedia
           component="img"
           height="500px"
