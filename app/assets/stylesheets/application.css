@@ -78,10 +78,38 @@ p {
   height: 34px;
 }
 
-/* ===================== REVIEW CREATE SECTION ========================== */
+/* ===================== REVIEW CREATE SECTION ============================= */
 #review {
   width: 600px;
 }
+
+/* ===================== RESTAURANT SHOW SECTION ============================ */
+.show-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.show-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+}
+.card-address-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.horizontal-flex-container {
+  display: flex;
+}
+
 /* =========================DEVISE SECTION ================================== */
 /* Refer to /app/views/devise/
 
