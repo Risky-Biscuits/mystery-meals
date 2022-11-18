@@ -40,7 +40,7 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
         </>
       )}
       <NavLink
-        to={`/restaurantreviewnew/:id`}
+        to={`/restaurantreviewnew/${id}`}
         style={{ textDecoration: "none" }}
       >
         <Button
