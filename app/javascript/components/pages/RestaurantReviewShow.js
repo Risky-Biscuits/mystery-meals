@@ -8,15 +8,15 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
   );
 
   //using currentReviews, make a variable called averageReviewRating
-  let averageReviewRating = 0
-  let totalReviewRating = 0
-  let lengthOfReviews = currentReviews.length
+  let averageReviewRating = 0;
+  let totalReviewRating = 0;
+  let lengthOfReviews = currentReviews.length;
 
-  for(let i=0; i<currentReviews.length; i++) {
-    totalReviewRating+=currentReviews[i].rating
+  for (let i = 0; i < currentReviews.length; i++) {
+    totalReviewRating += currentReviews[i].rating;
   }
-  averageReviewRating = totalReviewRating/lengthOfReviews
-  
+  averageReviewRating = totalReviewRating / lengthOfReviews;
+
   const currentRestaurant = restaurants?.find(
     (restaurant) => restaurant.id === +id
   );
@@ -44,23 +44,35 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
             {averageReviewRating === 3 && (
               <img src={require("../assets/new_mid.png")} />
             )}
-            {averageReviewRating< 3 && <img src={require("../assets/new_bad.png")} />}
+            {averageReviewRating < 3 && (
+              <img src={require("../assets/new_bad.png")} />
+            )}
           </p>
           <table>
             <thead>
               <tr>
                 <th>Review</th>
                 <th>Rating</th>
+                <th>Test</th>
               </tr>
             </thead>
             <tbody>
-              {/* add stars */}
               {currentReviews.map((item) => (
                 <tr key={item.id}>
                   <td>{item.review}</td>
                   <td>
-                    {item.rating}
+                    <div className="star-rating">
+                      {[...Array(item.rating)].map((star, index) => {
+                        index += 1;
+                        return <span className="star">&#9733;</span>;
+                      })}
+                      {[...Array(5-item.rating)].map((star, index) => {
+                        index += 1;
+                        return <span className="star">&#9734;</span>;
+                      })}
+                    </div>
                   </td>
+                  <td>hi</td>
                 </tr>
               ))}
             </tbody>
