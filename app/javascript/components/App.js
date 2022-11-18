@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import mockRestaurants from "./mockRestaurants";
-import mockReviews from "./mockReviews";
+import restaurants from "./mockRestaurants";
+import reviews from "./mockReviews";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProtectedRestaurantIndex from "./pages/ProtectedRestaurantIndex";
@@ -130,7 +130,7 @@ const App = (props) => {
         <Route
           path="/restaurantshow/:id"
           element={
-            <RestaurantShow {...props} restaurants={restaurants} />
+            <RestaurantShow {...props} restaurants={restaurants} reviews={reviews}/>
           }
         />
         <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={restaurants} reviews={reviews} deleteRestaurant={deleteRestaurant} />} />
