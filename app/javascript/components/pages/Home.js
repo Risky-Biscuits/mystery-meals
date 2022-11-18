@@ -11,65 +11,99 @@ const Home = ({
   sign_out_route,
 }) => {
   return (
-    <>
-      {/* When logged out */}
-      <div className="logged_out">
-        {!logged_in && (
-          <>
-            <h1>Let Us Choose What You Eat</h1>
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href={new_user_route}
-            >
-              Get Started
-            </Button>
-            <img src={require("../assets/risky_biscuit_review_low.png")} />
-            <img src={require("../assets/risky_biscuit_phone.png")} />
-            <h2>How It Works</h2>
-            <ol>
-              <li> Create and account</li>
-              <li> Add restaurants you like</li>
-              <li> We'll randomly select you restaurants</li>
-            </ol>
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href={new_user_route}
-            >
-              Get Started
-            </Button>
-            <h2>Meet The Team</h2>
-            <img
-              src={require("../assets/david-thomas.png")}
-              height="331"
-              width="260"
-            />
-            <h3>David Thomas</h3>
-            <p>Tech Lead</p>
-            <img
-              src={require("../assets/jeremy-duncan-1.png")}
-              height="331"
-              width="260"
-            />
-            <h3>Jeremy Duncan</h3>
-            <p>Project/Product Manager</p>
-            <img
-              src={require("../assets/risky_biscuit_phone.png")}
-              height="331"
-              width="260"
-            />
-            <h3>Michy Herrera</h3>
-            <p>Design Lead</p>
-            <img
-              src={require("../assets/risky_biscuit_phone.png")}
-              height="331"
-              width="260"
-            />
-            <h3>Ricky "Risky" Biscuit</h3>
-            <p>Mascot</p>
-          </>
-        )}
+    <div className="page-container">
+      <div className="logged-out-home">
+        {/* When logged out */}
+        <div className="logged_out">
+          {!logged_in && (
+            <>
+              <div className="logged-out-box1">
+                <div className="logged-out-box1-1">
+                  <div className="logged-out-box1-2">
+                    <h1>
+                      Let Us Choose <br />
+                      What You Eat
+                    </h1>
+                  </div>
+                  <div className="logged-out-box1-button-box">
+                    <Button
+                      variant="contained"
+                      sx={{
+                        color: "white",
+                        padding: "12px",
+                        bgcolor: "#55AF4D",
+                        fontSize: "1.2rem",
+                      }}
+                      href={new_user_route}
+                    >
+                      Get Started
+                    </Button>
+                  </div>
+                </div>
+                <img src={require("../assets/risky_biscuit_review_low.png")} />
+              </div>
+              <div className="logged-out-box2">
+                <img src={require("../assets/risky_biscuit_phone.png")} />
+                <div className="logged-out-box2-1">
+                  <h2>How It Works</h2>
+                  <div className="logged-out-box2-2">
+                    <ol>
+                      <li> Create and account</li>
+                      <li> Add restaurants you like</li>
+                      <li>
+                        {" "}
+                        We'll randomly select you <br /> restaurants
+                      </li>
+                    </ol>
+                  </div>
+                  <div className="logged-out-box2-button-box">
+                    <Button
+                      variant="contained"
+                      sx={{
+                        color: "white",
+                        padding: "12px",
+                        bgcolor: "#55AF4D",
+                        fontSize: "1.2rem",
+                      }}
+                      href={new_user_route}
+                    >
+                      Get Started
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              <h2>Meet The Team</h2>
+              <img
+                src={require("../assets/david-thomas.png")}
+                height="331"
+                width="260"
+              />
+              <h3>David Thomas</h3>
+              <p>Tech Lead</p>
+              <img
+                src={require("../assets/jeremy-duncan-1.png")}
+                height="331"
+                width="260"
+              />
+              <h3>Jeremy Duncan</h3>
+              <p>Project/Product Manager</p>
+              <img
+                src={require("../assets/risky_biscuit_phone.png")}
+                height="331"
+                width="260"
+              />
+              <h3>Michy Herrera</h3>
+              <p>Design Lead</p>
+              <img
+                src={require("../assets/risky_biscuit_phone.png")}
+                height="331"
+                width="260"
+              />
+              <h3>Ricky "Risky" Biscuit</h3>
+              <p>Mascot</p>
+            </>
+          )}
+        </div>
       </div>
 
       {/* When logged in */}
@@ -113,7 +147,7 @@ const Home = ({
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
