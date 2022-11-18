@@ -34,8 +34,8 @@ const Header = ({
               aria-label="menu"
               sx={{ mr: 2 }}
             >
-              {/* Header Image */}
-              <img src={"../assets/Risky Biscuit_Headerlogo.png"} />
+              {/* Header Image */} 
+              <img src={require("../assets/Risky Biscuit_Headerlogo.png")} />
             </IconButton>
             {logged_in && (
               <div className="name-box">
