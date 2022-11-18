@@ -26,7 +26,7 @@ const ProtectedRestaurantShow = ({
   return (
     <>
       <h1>Restaurant Details</h1>
-      {current_user.id === parseInt(user_id) && (
+      {current_user.id === parseInt(user_id) && currentRestaurant &&(
         <>
           <h3>{currentRestaurant.name}</h3>
           <img src={currentRestaurant.image} />
