@@ -362,3 +362,50 @@ label {
   justify-content: center;
   padding-top: 20px;
 }
+
+.logged-out-box3 {
+  border: 1px solid orange;
+  text-align: center;
+}
+
+.logged-out-box3 > h2 {
+  font-weight: 400;
+  font-size: 2.0rem;
+  text-align: center;
+}
+
+.logged-out-box3-1 {
+  border: 1px solid purple;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.team-1 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.team-2 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.team-3 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+.team-4 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 1.3rem;
+}

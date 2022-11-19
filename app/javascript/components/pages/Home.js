@@ -72,35 +72,47 @@ const Home = ({
                   </div>
                 </div>
               </div>
-              <h2>Meet The Team</h2>
-              <img
-                src={require("../assets/david-thomas.png")}
-                height="331"
-                width="260"
-              />
-              <h3>David Thomas</h3>
-              <p>Tech Lead</p>
-              <img
-                src={require("../assets/jeremy-duncan-1.png")}
-                height="331"
-                width="260"
-              />
-              <h3>Jeremy Duncan</h3>
-              <p>Project/Product Manager</p>
-              <img
-                src={require("../assets/risky_biscuit_phone.png")}
-                height="331"
-                width="260"
-              />
-              <h3>Michy Herrera</h3>
-              <p>Design Lead</p>
-              <img
-                src={require("../assets/risky_biscuit_phone.png")}
-                height="331"
-                width="260"
-              />
-              <h3>Ricky "Risky" Biscuit</h3>
-              <p>Mascot</p>
+              <div className="logged-out-box3">
+                <h2>Meet The Team</h2>
+                <div className="logged-out-box3-1">
+                  <div className="team-1">
+                    <img
+                      src={require("../assets/david-thomas.png")}
+                      height="331"
+                      width="260"
+                    />
+                    <h3>David Thomas</h3>
+                    <p>Tech Lead</p>
+                  </div>
+                  <div className="team-2">
+                    <img
+                      src={require("../assets/jeremy-duncan-1.png")}
+                      height="331"
+                      width="260"
+                    />
+                    <h3>Jeremy Duncan</h3>
+                    <p>Project/Product Manager</p>
+                  </div>
+                  <div className="team-3">
+                    <img
+                      src={require("../assets/risky_biscuit_phone.png")}
+                      height="331"
+                      width="260"
+                    />
+                    <h3>Michy Herrera</h3>
+                    <p>Design Lead</p>
+                  </div>
+                  <div className="team-4">
+                    <img
+                      src={require("../assets/risky_biscuit_phone.png")}
+                      height="331"
+                      width="260"
+                    />
+                    <h3>Ricky "Risky" Biscuit</h3>
+                    <p>Mascot</p>
+                  </div>
+                </div>
+              </div>
             </>
           )}
         </div>
