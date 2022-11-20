@@ -4,7 +4,6 @@ body {
   background-color: #EEEEEE;
   color: rgb(25, 24, 24);
   font-family: 'Balsamiq Sans', cursive;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,6 +124,19 @@ p {
 
 .horizontal-flex-container {
   display: flex;
+}
+
+
+/* ========================= FOOTER SECTION ================================== */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 8.5px 8.5px 20px 8px #292727;
+  text-shadow: .5px .5px 12px #292727;
 }
 
 /* =========================DEVISE SECTION ================================== */
