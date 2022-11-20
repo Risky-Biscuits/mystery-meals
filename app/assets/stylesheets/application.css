@@ -4,6 +4,14 @@ body {
   background-color: #EEEEEE;
   color: rgb(25, 24, 24);
   font-family: 'Balsamiq Sans', cursive;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body>div:nth-child(1) {
+  width: 100%;
 }
 
 p {
@@ -15,6 +23,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px;
 }
 
 /* === Specific styles for when user is logged IN === */
@@ -43,7 +52,13 @@ p {
 .name-box {
   border: 1px solid white;
   padding: 5px;
+  border-radius: 3px;
 
+}
+
+.logo-username-container {
+  display: flex;
+  align-items: center;
 }
 
 /* =========================RESTAURANT INDEX SECTION ============================= */
@@ -90,6 +105,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .show-card-info {
   display: flex;
   flex-direction: column;
@@ -97,6 +113,7 @@ p {
   align-items: left;
   text-align: left;
 }
+
 .card-address-container {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -293,4 +310,27 @@ label {
   list-style: none;
   padding: 0px;
   color: red;
+}
+
+/* ===================== RESPONSIVE CSS Styles ============================== */
+/* === Responsive Phone Size ==================================== */
+@media (max-width: 729px) {
+
+  /* LOGO */
+  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>button>img {
+    width: 100px;
+  }
+
+  /* USERNAME */
+  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>div {
+    font-size: 1rem;
+    margin-left: -10px;
+  }
+}
+
+/* LINK Responsiveness */
+@media (max-width: 1318.75px) {
+  .header-links-container {
+    margin-top: -50px;
+  }
 }
