@@ -1,3 +1,4 @@
+import CssBaseline from "@mui/material/CssBaseline";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -99,89 +100,110 @@ const App = (props) => {
 
   // ========================= DELETE SECTION ====================================
 
-  const deleteRestaurant = ( id ) => {
+  const deleteRestaurant = (id) => {
     fetch(`http://localhost:3000/restaurants/${id}`, {
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      method: "DELETE"
+      method: "DELETE",
     })
       .then((response) => response.json())
       .then((payload) => readRestaurant())
-      .catch((errors) => console.log("delete Errors:", errors))
-  }
+      .catch((errors) => console.log("delete Errors:", errors));
+  };
 
   return (
-    <BrowserRouter>
-      <Header {...props} />
-      <Routes>
-        <Route exact path="/" element={<Home {...props} />} />
-        {/* Restaurant Routes */}
-        <Route
-          path="/restaurantindex"
-          element={<RestaurantIndex {...props} restaurants={restaurants} />}
-        />
-        <Route
-          path="/protectedrestaurantindex"
-          element={
-            <ProtectedRestaurantIndex {...props} restaurants={restaurants} reviews={reviews} />
-          }
-        />
-        <Route
-          path="/restaurantshow/:id"
-          element={
-            <RestaurantShow {...props} restaurants={restaurants} reviews={reviews}/>
-          }
-        />
-        <Route path="/protectedrestaurantshow/:user_id/:id" element={<ProtectedRestaurantShow {...props} restaurants={restaurants} reviews={reviews} deleteRestaurant={deleteRestaurant} />} />
-        <Route
-          path="/restaurantnew"
-          element={
-            <RestaurantNew createRestaurant={createRestaurant} />
-          }
-        />
-        <Route 
-          path="/restaurantedit/:id" 
-          element={
-            <RestaurantEdit  restaurants={restaurants} updateRestaurant={updateRestaurant}/>
-          } 
-        />
+    <div className="App">
+      <CssBaseline />
+      <BrowserRouter>
+        <Header className="header" {...props} />
+        <Routes>
+          <Route exact path="/" element={<Home {...props} />} />
+          {/* Restaurant Routes */}
+          <Route
+            path="/restaurantindex"
+            element={<RestaurantIndex {...props} restaurants={restaurants} />}
+          />
+          <Route
+            path="/protectedrestaurantindex"
+            element={
+              <ProtectedRestaurantIndex
+                {...props}
+                restaurants={restaurants}
+                reviews={reviews}
+              />
+            }
+          />
+          <Route
+            path="/restaurantshow/:id"
+            element={
+              <RestaurantShow
+                {...props}
+                restaurants={restaurants}
+                reviews={reviews}
+              />
+            }
+          />
+          <Route
+            path="/protectedrestaurantshow/:user_id/:id"
+            element={
+              <ProtectedRestaurantShow
+                {...props}
+                restaurants={restaurants}
+                reviews={reviews}
+                deleteRestaurant={deleteRestaurant}
+              />
+            }
+          />
+          <Route
+            path="/restaurantnew"
+            element={<RestaurantNew createRestaurant={createRestaurant} />}
+          />
+          <Route
+            path="/restaurantedit/:id"
+            element={
+              <RestaurantEdit
+                restaurants={restaurants}
+                updateRestaurant={updateRestaurant}
+              />
+            }
+          />
 
-        {/* Restaurant Review Routes */}
-        <Route
-          path="/restaurantreviewindex"
-          element={
-            <RestaurantReviewIndex />
-          }
-        />
-        <Route
-          path="/restaurantreviewshow/:id"
-          element={
-            <RestaurantReviewShow {...props} reviews={reviews} restaurants={restaurants} />
-          }
-        />
-        <Route
-          path="/restaurantreviewnew/:id"
-          element={
-            <RestaurantReviewNew {...props} createReview={createReview} restaurants={restaurants} />
-          }
-        />
-        <Route
-          path="/restaurantreviewedit/:id"
-          element={
-            <RestaurantReviewEdit />
-          }
-        />
-        {/* Unknown Link */}
-        <Route 
-          path="*" 
-          element={
-          <NotFound />
-          } 
-        />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+          {/* Restaurant Review Routes */}
+          <Route
+            path="/restaurantreviewindex"
+            element={<RestaurantReviewIndex />}
+          />
+          <Route
+            path="/restaurantreviewshow/:id"
+            element={
+              <RestaurantReviewShow
+                {...props}
+                reviews={reviews}
+                restaurants={restaurants}
+              />
+            }
+          />
+          <Route
+            path="/restaurantreviewnew/:id"
+            element={
+              <RestaurantReviewNew
+                {...props}
+                createReview={createReview}
+                restaurants={restaurants}
+              />
+            }
+          />
+          <Route
+            path="/restaurantreviewedit/:id"
+            element={<RestaurantReviewEdit />}
+          />
+          {/* Unknown Link */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 };
 
