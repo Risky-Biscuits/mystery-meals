@@ -29,7 +29,7 @@ const App = (props) => {
 
   // ========================= RESTAURANT SECTION ================================
   const readRestaurant = () => {
-    fetch("http://localhost:3000/restaurants")
+    fetch("/restaurants")
       .then((response) => response.json())
       .then((payload) => {
         setRestaurants(payload);
@@ -38,7 +38,7 @@ const App = (props) => {
   };
 
   const createRestaurant = (restaurant) => {
-    fetch("http://localhost:3000/restaurants", {
+    fetch("/restaurants", {
       // converts the object to a string that can be passed in the request
       body: JSON.stringify(restaurant),
       // specify the info being sent in JSON and the info returning should be JSON
@@ -54,7 +54,7 @@ const App = (props) => {
   };
 
   const updateRestaurant = (restaurant, id) => {
-    fetch(`http://localhost:3000/restaurants/${id}`, {
+    fetch(`/restaurants/${id}`, {
       // converting an object to a string
       body: JSON.stringify(restaurant),
       // specify the info being sent in JSON and the info returning should be JSON
@@ -73,7 +73,7 @@ const App = (props) => {
 
   // ========================= REVIEW SECTION ====================================
   const createReview = (review) => {
-    fetch("http://localhost:3000/restaurant_reviews", {
+    fetch("/restaurant_reviews", {
       body: JSON.stringify(review),
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const App = (props) => {
   };
 
   const readReview = () => {
-    fetch("http://localhost:3000/restaurant_reviews")
+    fetch("/restaurant_reviews")
       .then((response) => response.json())
       .then((payload) => {
         setReviews(payload);
@@ -101,7 +101,7 @@ const App = (props) => {
   // ========================= DELETE SECTION ====================================
 
   const deleteRestaurant = (id) => {
-    fetch(`http://localhost:3000/restaurants/${id}`, {
+    fetch(`/restaurants/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },
