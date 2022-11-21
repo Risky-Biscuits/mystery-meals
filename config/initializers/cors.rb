@@ -5,7 +5,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://risky-biscuits.herokuapp.com/'  # <- change this to allow requests from any domain while in development.
+    origins '*'  # <- change this to allow requests from any domain while in development.
 
     resource '*',
       headers: :any,
