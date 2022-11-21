@@ -42,7 +42,7 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
             {averageReviewRating >= 4 && (
               <img src={require("../assets/new_good.png")} />
             )}
-            {averageReviewRating === 3 && (
+            {averageReviewRating === 3 && averageReviewRating < 4 && (
               <img src={require("../assets/new_mid.png")} />
             )}
             {averageReviewRating < 3 && (
@@ -54,7 +54,6 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
               <tr>
                 <th>Review</th>
                 <th>Rating</th>
-                <th>Test</th>
               </tr>
             </thead>
             <tbody>
@@ -73,7 +72,6 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
                       })}
                     </div>
                   </td>
-                  <td>hi</td>
                 </tr>
               ))}
             </tbody>
@@ -100,3 +98,6 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
 };
 
 export default RestaurantReviewShow;
+
+
+
