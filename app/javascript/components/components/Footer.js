@@ -1,63 +1,97 @@
-import AddIcon from "@mui/icons-material/Add";
-import MenuIcon from "@mui/icons-material/Menu";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import SearchIcon from "@mui/icons-material/Search";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Fab from "@mui/material/Fab";
-import IconButton from "@mui/material/IconButton";
-import { styled } from "@mui/material/styles";
-import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 const Footer = () => {
-  const StyledFab = styled(Fab)({
-    position: "absolute",
-    zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: "0 auto",
-  });
-
   return (
-    <React.Fragment>
+    <div className="footer">
       <AppBar
         position="sticky"
         color="primary"
-        sx={{ bgcolor: "#AD8350", top: "auto", bottom: 0 }}
+        rel="noopener"
+        sx={{
+          bgcolor: "#AD8350",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          padding: { xs: "10px", md: "30px" },
+        }}
       >
-        <Toolbar>
-          <Box sx={{ flexGrow: 1 }} />
-        </Toolbar>
-        <p style={{ textAlign: "center" }}>
-          © 2022.{" "}
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
+          © 2022
+        </Typography>
+        &nbsp;
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
           <a
             href="https://www.linkedin.com/in/michyherrera/"
             target="_blank"
             style={{ textDecoration: "none", color: "white" }}
           >
             Michy Herrera
-          </a>{" "}
-          -{" "}
+          </a>
+        </Typography>
+        &nbsp;
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
+          -
+        </Typography>
+        &nbsp;
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
           <a
             href="https://www.linkedin.com/in/davidthomas91/"
             target="_blank"
+            rel="noopener"
             style={{ textDecoration: "none", color: "white" }}
           >
             David Thomas
-          </a>{" "}
-          -{" "}
+          </a>
+        </Typography>
+        &nbsp;
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
+          -
+        </Typography>
+        &nbsp;
+        <Typography
+          sx={{
+            fontFamily: "'Balsamiq Sans', cursive",
+            fontSize: { xs: ".6rem", sm: ".8rem", md: "1.2rem" },
+          }}
+        >
           <a
-            href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADZI_A4BaXbzgDTyTrKXLnpAk6RjEhfaTKc&keywords=jeremy%20duncan&origin=RICH_QUERY_SUGGESTION&position=0&searchId=b5c267e6-63c0-4af2-9895-3b6c6a6fd65c&sid=yuU"
+            href="https://www.linkedin.com/in/jeremy-duncan2021/"
             target="_blank"
+            rel="noopener"
             style={{ textDecoration: "none", color: "white" }}
           >
             Jeremy Duncan
           </a>
-        </p>
+        </Typography>
       </AppBar>
-    </React.Fragment>
+    </div>
   );
 };
 export default Footer;
