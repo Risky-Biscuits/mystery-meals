@@ -95,7 +95,7 @@ const Home = ({
                   </div>
                   <div className="team-3">
                     <img
-                      src={require("../assets/risky_biscuit_phone.png")}
+                      src={require("../assets/michy-herrera.png")}
                       height="331"
                       width="260"
                     />
@@ -104,7 +104,7 @@ const Home = ({
                   </div>
                   <div className="team-4">
                     <img
-                      src={require("../assets/risky_biscuit_phone.png")}
+                      src={require("../assets/risky-pic.png")}
                       height="331"
                       width="260"
                     />
@@ -119,7 +119,7 @@ const Home = ({
       </div>
 
       {/* When logged in */}
-      <div className="logged_in">
+      <div className="logged-in-box1">
         {logged_in && (
           <>
             <h1>Welcome!</h1>
@@ -128,34 +128,36 @@ const Home = ({
               height="273"
               width="403"
             />
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href="/restaurantindex"
-            >
-              SEE ALL RESTAURANTS
-            </Button>
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href="/protectedrestaurantindex"
-            >
-              SEE MY RESTAURANTS
-            </Button>
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href="/restaurantnew"
-            >
-              ADD RESTAURANT
-            </Button>
-            <Button
-              variant="contained"
-              sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-              href=""
-            >
-              TELL ME WHERE TO EAT
-            </Button>
+            <div className="logged-in-box1-1">
+              <Button
+                variant="contained"
+                sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
+                href="/restaurantindex"
+              >
+                SEE ALL RESTAURANTS
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
+                href="/protectedrestaurantindex"
+              >
+                SEE MY RESTAURANTS
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
+                href="/restaurantnew"
+              >
+                ADD RESTAURANT
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
+                href=""
+              >
+                TELL ME WHERE TO EAT
+              </Button>
+            </div>
           </>
         )}
       </div>
