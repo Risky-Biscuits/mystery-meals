@@ -1,7 +1,9 @@
-import React from "react";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
+import ReviewsRoundedIcon from "@mui/icons-material/ReviewsRounded";
 import Button from "@mui/material/Button";
-import Greeting from "../components/Greeting";
-import { height } from "@mui/system";
+import React from "react";
 
 const Home = ({
   logged_in,
@@ -134,28 +136,29 @@ const Home = ({
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/restaurantindex"
               >
-                SEE ALL RESTAURANTS
+                <RestaurantRoundedIcon/>&nbsp;RESTAURANTS
+
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/protectedrestaurantindex"
               >
-                SEE MY RESTAURANTS
+                <ReviewsRoundedIcon/>&nbsp;MY REVIEWS
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/restaurantnew"
               >
-                ADD RESTAURANT
+               <AddRoundedIcon/>&nbsp;ADD RESTAURANT
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
-                href=""
+                href="/randomrestaurant"
               >
-                TELL ME WHERE TO EAT
+                <HelpRoundedIcon/>&nbsp;TELL ME WHERE TO EAT
               </Button>
             </div>
           </>

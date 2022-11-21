@@ -33,7 +33,8 @@ module RiskyBiscuitApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    # config/application.rb
-    config.assets.initialize_on_precompile = false
+
+    # # config/application.rb <==============//
+    # config.assets.initialize_on_precompile = false
   end
 end
