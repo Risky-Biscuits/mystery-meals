@@ -4,6 +4,13 @@ body {
   background-color: #EEEEEE;
   color: rgb(25, 24, 24);
   font-family: 'Balsamiq Sans', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body>div:nth-child(1) {
+  width: 100%;
 }
 
 p {
@@ -15,6 +22,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0px;
 }
 
 /* === Specific styles for when user is logged IN === */
@@ -43,7 +51,13 @@ p {
 .name-box {
   border: 1px solid white;
   padding: 5px;
+  border-radius: 3px;
 
+}
+
+.logo-username-container {
+  display: flex;
+  align-items: center;
 }
 
 /* =========================RESTAURANT INDEX SECTION ============================= */
@@ -90,6 +104,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .show-card-info {
   display: flex;
   flex-direction: column;
@@ -97,6 +112,7 @@ p {
   align-items: left;
   text-align: left;
 }
+
 .card-address-container {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -110,6 +126,19 @@ p {
   display: flex;
 }
 
+
+/* ========================= FOOTER SECTION ================================== */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 8.5px 8.5px 20px 8px #292727;
+  text-shadow: .5px .5px 12px #292727;
+}
+
 /* =========================DEVISE SECTION ================================== */
 /* Refer to /app/views/devise/
 
@@ -118,25 +147,39 @@ p {
   display: flex;
   background-color: #AD8350;
   border-radius: 15px;
-  width: 90%;
   justify-content: space-between;
-  padding: 0px 15px 0px 15px;
+  padding: 10px 15px 10px 15px;
   margin-bottom: 80px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 97%;
+  color: white;
+  text-align: center;
+  box-shadow: 1.5px 1.5px 19px 1px #292727;
+  text-shadow: .5px .5px 12px #292727;
 }
 
 .erb-footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #AD8350;
-  width: 100%;
-  padding: 15px;
-  margin-top: 80px;
   text-align: center;
   align-items: center;
-  color: white;
+  background-color: #AD8350;
+  width: 100%;
+  padding: 30px;
+  margin-top: 80px;
   font-size: 1.5rem;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  box-shadow: 8.5px 8.5px 20px 8px #292727;
+  text-shadow: .5px .5px 12px #292727;
 }
+
 
 .erb-footer>a {
   text-decoration: none;
@@ -147,6 +190,7 @@ p {
   text-decoration: none;
   font-size: 1.5rem;
   color: white;
+  margin-right: 2rem;
 }
 
 .formContainer {
@@ -161,10 +205,11 @@ p {
 }
 
 .sign-up-header {
-  max-width: 500px;
+  max-width: 700px;
   font-weight: 200px;
   font-size: 3rem;
   margin-bottom: 40px;
+  margin-right: 150px;
 }
 
 .flex-row-container {
@@ -175,8 +220,9 @@ p {
 .vertical-center {
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
+
 
 .fieldContainer {
   display: flex;
@@ -208,7 +254,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 35%;
 }
 
 .devise-btn>input[type=submit] {
@@ -294,6 +340,7 @@ label {
   padding: 0px;
   color: red;
 }
+
 
 /* =========================Logged Out Home Styling ================================== */
 
@@ -443,4 +490,26 @@ font-weight: 400;
   justify-content: space-between;
   margin-top: 20px;
   width: 75%;
+
+/* ===================== RESPONSIVE CSS Styles ============================== */
+/* === Responsive Phone Size ==================================== */
+@media (max-width: 729px) {
+
+  /* LOGO */
+  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>button>img {
+    width: 100px;
+  }
+
+  /* USERNAME */
+  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>div {
+    font-size: 1rem;
+    margin-left: -10px;
+  }
 }
+
+/* LINK Responsiveness */
+@media (max-width: 1318.75px) {
+  .header-links-container {
+    margin-top: -50px;
+  }
+  }
