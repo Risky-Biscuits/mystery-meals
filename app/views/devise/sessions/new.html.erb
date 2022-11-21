@@ -1,25 +1,39 @@
 <div class='formContainer'>
-  <h2>Log in</h2>
-  <div class="fieldContainer">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class='field'>
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+  <div class="erb-header">
+    <div class="vertical-center">
+      <%= image_tag "Risky Biscuit_Headerlogo.png", height: 100 %>
+    </div>
+    <div class="vertical-center">
+      <div class="link-no-decoration">
+        <%= link_to "Home", root_path	 %>
       </div>
-      <div class='field'>
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: 'current-password' %>
-      </div>
-      <% if devise_mapping.rememberable? %>
-        <div class='check-field'>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+    </div>
+  </div>
+  <div class='formContainer'>
+    <h2>Log in</h2>
+    <div class="fieldContainer">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class='field'>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+        </div>
+        <div class='field'>
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: 'current-password' %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class='check-field'>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+        <div class='actions devise-btn'>
+          <%= f.submit 'Log in' %>
         </div>
       <% end %>
-      <div class='actions'>
-        <%= f.submit 'Log in' %>
-      </div>
-    <% end %>
+    </div>
+    <%= render 'devise/shared/links' %>
   </div>
-  <%= render 'devise/shared/links' %>
-</div>
+    <div class="erb-footer">
+    © 2022 &nbsp; <a href="https://www.linkedin.com/in/michyherrera/">Michy Herrera</a>&nbsp; -&nbsp; <a href="https://www.linkedin.com/in/davidthomas91/">David Thomas </a> &nbsp;-&nbsp; <a href="https://www.jeremy-duncan.com">Jeremy Duncan </a>
+  </div>
