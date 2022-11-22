@@ -42,7 +42,7 @@ const Home = ({
                 <img src={require("../assets/risky_biscuit_review_low.png")} />
               </div>
               <div className="logged-out-box2">
-                <img src={require("../assets/risky_biscuit_phone.png")} />
+                <img src={require("../assets/risky-biscuit-sign-up.png")} />
                 <div className="logged-out-box2-1">
                   <h2>How It Works</h2>
                   <div className="logged-out-box2-2">
