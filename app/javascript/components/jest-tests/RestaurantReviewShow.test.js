@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { BrowserRouter, MemoryRouter, Routes, Route } from "react-router-dom";
-import RestaurantReviewShow from "../pages/RestaurantReviewShow";
-import mockReviews from "../mockReviews";
+import { BrowserRouter, MemoryRouter, Route, Routes } from "react-router-dom";
 import mockRestaurants from "../mockRestaurants";
+import mockReviews from "../mockReviews";
+import RestaurantReviewShow from "../pages/RestaurantReviewShow";
 
 describe("<RestaurantReviewShow />", () => {
   it("renders without crashing", () => {
@@ -23,7 +23,7 @@ describe("<RestaurantReviewShow />", () => {
       </MemoryRouter>
     );
     screen.logTestingPlaygroundURL();
-    const showRender = screen.getByText(/"not bad for east coast tacos"/i);
+    const showRender = screen.getByText(/not bad for east coast tacos/i);
     screen.debug(showRender);
     expect(showRender).toBeInTheDocument();
   });

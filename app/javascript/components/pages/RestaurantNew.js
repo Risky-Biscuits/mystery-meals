@@ -1,6 +1,5 @@
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import CancelPresentationRounded from '@mui/icons-material/CancelPresentationRounded';
-
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import CancelPresentationRounded from "@mui/icons-material/CancelPresentationRounded";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
@@ -54,24 +53,28 @@ const RestaurantNew = ({ createRestaurant }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-container">
-      <h1>Restaurant New</h1>
+    <div className="page-container form-title">
+      <h1>Add A New Restaurant To Our Database</h1>
       <Grid
         className="fieldContainer"
         sx={{
-          padding: "20px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           gap: "15px",
-          width: "650px",
         }}
       >
         <Typography variant="h6" gutterBottom>
-          Add Your Restaurant
+          New Restaurant Form
         </Typography>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Grid item xs={6}>
             <TextField
               onChange={handleChange}
@@ -84,6 +87,7 @@ const RestaurantNew = ({ createRestaurant }) => {
               label="Name of Restaurant"
               size="medium"
               type="text"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
               // value={userInput}
             />
           </Grid>
@@ -94,15 +98,22 @@ const RestaurantNew = ({ createRestaurant }) => {
               id="phone"
               name="phone_number"
               label="Phone Number"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
         </Grid>
 
-        <Grid sx={{ display: "flex", gap: "15px" }}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: "240px",
+                width: { xs: "300px", sm: "240px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -127,7 +138,7 @@ const RestaurantNew = ({ createRestaurant }) => {
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: "240px",
+                width: { xs: "300px", sm: "240px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -141,6 +152,7 @@ const RestaurantNew = ({ createRestaurant }) => {
                 label="Food Type"
                 name="food_type"
                 onChange={handleChange}
+                sx={{ width: { xs: "300px", sm: "inherit" } }}
               >
                 <MenuItem value={"Mexican"}>Mexican</MenuItem>
                 <MenuItem value={"Chinese"}>Chinese</MenuItem>
@@ -156,7 +168,7 @@ const RestaurantNew = ({ createRestaurant }) => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sx={{ width: "81%" }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
           <TextField
             onChange={handleChange}
             sx={{ width: "100%" }}
@@ -167,7 +179,7 @@ const RestaurantNew = ({ createRestaurant }) => {
           />
         </Grid>
 
-        <Grid item xs={12} sx={{ width: "81%" }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
           <TextField
             onChange={handleChange}
             sx={{ width: "100%" }}
@@ -177,18 +189,25 @@ const RestaurantNew = ({ createRestaurant }) => {
             label="Image URL"
           />
         </Grid>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Grid item xs={6}>
             <TextField
               onChange={handleChange}
               required
               id="street"
               name="street"
               label="street"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <TextField
               onChange={handleChange}
               required
@@ -196,21 +215,29 @@ const RestaurantNew = ({ createRestaurant }) => {
               name="city"
               label="City"
               autoComplete="City"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
         </Grid>
 
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Grid item xs={6}>
             <TextField
               onChange={handleChange}
               id="state"
               name="state"
               label="State"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <TextField
               type="number"
               onChange={handleChange}
@@ -219,15 +246,17 @@ const RestaurantNew = ({ createRestaurant }) => {
               name="zip"
               label="Zip / Postal code"
               autoComplete="Zip"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
         </Grid>
         <Grid
           sx={{
             display: "flex",
-            justifyContent: "left",
+            justifyContent: "center",
             gap: "15px",
-            mr: "110px",
+            mr: { xs: "inherit", md: "110px" },
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <Button
@@ -239,7 +268,8 @@ const RestaurantNew = ({ createRestaurant }) => {
             }}
             onClick={handleSubmit}
           >
-          <AddCircleOutlineIcon/>&nbsp;Add Restaurant
+            <AddCircleOutlineIcon />
+            &nbsp;Add Restaurant
           </Button>
           <Button
             variant="contained"
@@ -250,8 +280,8 @@ const RestaurantNew = ({ createRestaurant }) => {
             }}
             href="/restaurantindex"
           >
-           <CancelPresentationRounded/>&nbsp;Cancel
-
+            <CancelPresentationRounded />
+            &nbsp;Cancel
           </Button>
         </Grid>
       </Grid>

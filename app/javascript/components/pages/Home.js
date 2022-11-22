@@ -1,5 +1,5 @@
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
-import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
 import ReviewsRoundedIcon from "@mui/icons-material/ReviewsRounded";
 import Button from "@mui/material/Button";
@@ -7,10 +7,7 @@ import React from "react";
 
 const Home = ({
   logged_in,
-  current_user,
   new_user_route,
-  sign_in_route,
-  sign_out_route,
 }) => {
   return (
     <div className="page-container">
@@ -32,9 +29,9 @@ const Home = ({
                       variant="contained"
                       sx={{
                         color: "white",
-                        padding: "12px",
+                        padding: { xs: "6px", sm: "12px" },
                         bgcolor: "#55AF4D",
-                        fontSize: "1.2rem",
+                        fontSize: { xs: "1.2rem", sm: "1.2rem" },
                       }}
                       href={new_user_route}
                     >
@@ -125,10 +122,10 @@ const Home = ({
         {logged_in && (
           <>
             <h1>Welcome!</h1>
+
             <img
+              className="home-img"
               src={require("../assets/risky-biscuit-home.png")}
-              height="273"
-              width="403"
             />
             <div className="logged-in-box1-1">
               <Button
@@ -136,29 +133,32 @@ const Home = ({
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/restaurantindex"
               >
-                <RestaurantRoundedIcon/>&nbsp;RESTAURANTS
-
+                <RestaurantRoundedIcon />
+                &nbsp;RESTAURANTS
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/protectedrestaurantindex"
               >
-                <ReviewsRoundedIcon/>&nbsp;MY REVIEWS
+                <ReviewsRoundedIcon />
+                &nbsp;MY REVIEWS
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/restaurantnew"
               >
-               <AddRoundedIcon/>&nbsp;ADD RESTAURANT
+                <AddRoundedIcon />
+                &nbsp;ADD RESTAURANT
               </Button>
               <Button
                 variant="contained"
                 sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D" }}
                 href="/randomrestaurant"
               >
-                <HelpRoundedIcon/>&nbsp;TELL ME WHERE TO EAT
+                <HelpRoundedIcon />
+                &nbsp;TELL ME WHERE TO EAT
               </Button>
             </div>
           </>

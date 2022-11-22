@@ -19,12 +19,16 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
   );
 
   return (
-    <div className="page-container">
+    <div className="page-container show-title">
       <h1>Restaurant Details</h1>
       {currentRestaurant && (
         <Card
           elevation={24}
-          sx={{ width: 650, border: "5px solid #AD8350", mb: "1rem" }}
+          sx={{
+            width: { xs: "350px", md: "650" },
+            border: "5px solid #AD8350",
+            mb: "1rem",
+          }}
         >
           <CardMedia
             component="img"

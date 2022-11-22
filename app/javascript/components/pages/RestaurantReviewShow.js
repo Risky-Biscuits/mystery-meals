@@ -1,5 +1,5 @@
-import React from "react";
 import Button from "@mui/material/Button";
+import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 
 const RestaurantReviewShow = ({ reviews, restaurants }) => {
@@ -23,7 +23,7 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
   );
 
   return (
-    <>
+    <div className="page-container">
       <h1>Restaurant Review Show</h1>
       {currentRestaurant && (
         <>
@@ -93,7 +93,7 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
           ADD REVIEW
         </Button>
       </NavLink>
-    </>
+    </div>
   );
 };
 

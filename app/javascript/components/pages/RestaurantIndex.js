@@ -4,32 +4,30 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { NavLink } from "react-router-dom";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const RestaurantIndex = ({
   restaurants,
   logged_in,
-  current_user,
-  new_user_route,
-  sign_in_route,
-  sign_out_route,
+
 }) => {
   return (
-    <>
+    <div className="page-container">
 
 {/* ------------------------------When Logged In------------------------------------- */}    
 
       {logged_in && (
         <div className="page-container">
-          <h1>See All Restaurants</h1>
+          <h1>All Available Restaurants</h1>
+          <h2>See all the restaurants our members have added</h2>
           <div className="card-container">
             {restaurants.map((restaurant, index) => {
               return (
                 <div key={index}>
                   <Card
                     elevation={24}
-                    sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+                    sx={{ width: 300, border: "5px solid #AD8350" }}
                   >
                     <CardMedia
                       component="img"
@@ -93,7 +91,7 @@ const RestaurantIndex = ({
                 <div key={index}>
                   <Card
                     elevation={24}
-                    sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+                    sx={{ width: 300, border: "5px solid #AD8350" }}
                   >
                     <CardMedia
                       component="img"
@@ -130,7 +128,7 @@ const RestaurantIndex = ({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
