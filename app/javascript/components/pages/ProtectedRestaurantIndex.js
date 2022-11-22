@@ -24,7 +24,7 @@ const ProtectedRestaurantIndex = ({
   current_user,
 }) => {
   return (
-    <div className="page-container">
+    <div className="page-container title">
       <h1>My Reviews</h1>
       {logged_in && (
         <>

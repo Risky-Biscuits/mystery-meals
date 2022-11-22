@@ -40,8 +40,8 @@ const RestaurantReviewNew = ({ current_user, restaurants, createReview }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-container">
-      <h1>Restaurant Review New</h1>
+    <div className="page-container form-title">
+      <h1>Add A Review</h1>
       <Grid
         className="fieldContainer"
         sx={{

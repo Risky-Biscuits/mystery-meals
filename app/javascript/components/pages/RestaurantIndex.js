@@ -27,7 +27,7 @@ const RestaurantIndex = ({
                 <div key={index}>
                   <Card
                     elevation={24}
-                    sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+                    sx={{ width: 300, border: "5px solid #AD8350" }}
                   >
                     <CardMedia
                       component="img"

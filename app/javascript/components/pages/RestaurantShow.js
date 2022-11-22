@@ -19,7 +19,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
   );
 
   return (
-    <div className="page-container">
+    <div className="page-container show-title">
       <h1>Restaurant Details</h1>
       {currentRestaurant && (
         <Card

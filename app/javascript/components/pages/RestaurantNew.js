@@ -53,7 +53,7 @@ const RestaurantNew = ({ createRestaurant }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-container">
+    <div className="page-container form-title">
       <h1>Add A New Restaurant To Our Database</h1>
       <Grid
         className="fieldContainer"
