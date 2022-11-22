@@ -170,6 +170,19 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
           BACK TO ALL RESTAURANTS
         </Button>
       </NavLink>
+      <NavLink to={`/restaurantedit/${id}`} style={{ textDecoration: "none" }}>
+        <Button
+          variant="contained"
+          sx={{
+            color: "white",
+            padding: "12px",
+            bgcolor: "#55AF4D",
+            mt: "15px",
+          }}
+        >
+          EDIT RESTAURANT
+        </Button>
+      </NavLink>
     </div>
   );
 };

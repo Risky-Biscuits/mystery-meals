@@ -11,11 +11,10 @@ import Savings from "@mui/icons-material/Savings";
 
 const RandomRestaurant = ({ restaurants }) => {
   const [randNum, setRandNum] = useState(0);
-
   const [clicked, setClicked] = useState(false)
+  
   const getRandomRestaurant = (rest, randNum) => {
     setRandNum(Math.floor(Math.random() * rest.length));
-    console.log("Num", randNum);
   };
 
   const handleClick = () => {
