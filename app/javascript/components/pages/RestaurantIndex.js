@@ -1,3 +1,5 @@
+import InfoIcon from '@mui/icons-material/Info';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -27,7 +29,7 @@ const RestaurantIndex = ({
                 <div key={index}>
                   <Card
                     elevation={24}
-                    sx={{ width: 300, border: "5px solid #AD8350" }}
+                    sx={{ width: 325, border: "5px solid #AD8350" }}
                   >
                     <CardMedia
                       component="img"
@@ -40,7 +42,7 @@ const RestaurantIndex = ({
                         {restaurant.name}
                       </Typography>
                     </CardContent>
-                    <CardActions>
+                    <CardActions sx={{display: "flex", justifyContent: "center"}}>
                       <NavLink
                         to={`/restaurantshow/${restaurant.id}`}
                         style={{ textDecoration: "none" }}
@@ -53,7 +55,7 @@ const RestaurantIndex = ({
                             bgcolor: "#55AF4D",
                           }}
                         >
-                          Details
+                          <InfoIcon/>&nbsp;Details
                         </Button>
                       </NavLink>
                       <NavLink
@@ -68,7 +70,7 @@ const RestaurantIndex = ({
                           bgcolor: "#55AF4D",
                         }}
                       >
-                        Reviews
+                        <ReviewsIcon/>&nbsp;Reviews
                       </Button>
                       </NavLink>
                     </CardActions>
@@ -91,7 +93,7 @@ const RestaurantIndex = ({
                 <div key={index}>
                   <Card
                     elevation={24}
-                    sx={{ width: 300, border: "5px solid #AD8350" }}
+                    sx={{ width: 325, border: "5px solid #AD8350" }}
                   >
                     <CardMedia
                       component="img"
@@ -104,7 +106,7 @@ const RestaurantIndex = ({
                         {restaurant.name}
                       </Typography>
                     </CardContent>
-                    <CardActions>
+                    <CardActions >
                       <NavLink
                         to={`/restaurantshow/${restaurant.id}`}
                         style={{ textDecoration: "none" }}
@@ -117,7 +119,7 @@ const RestaurantIndex = ({
                             bgcolor: "#55AF4D",
                           }}
                         >
-                          Details
+                         <InfoIcon/>&nbsp;Details
                         </Button>
                       </NavLink>
                     </CardActions>
