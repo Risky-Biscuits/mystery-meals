@@ -6,3 +6,4 @@ const current_user = {
   first_name: "Ricky",
   last_name: "Biscuits",
 };
+export default current_user
