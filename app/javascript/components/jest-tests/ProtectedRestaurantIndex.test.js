@@ -18,23 +18,18 @@ describe("<RestaurantIndex />", () => {
 
   it("renders when user is logged in", () => {
     render(
-      <BrowserRouter>
-        <ProtectedRestaurantIndex logged_in={true} current_user={MockUser} restaurants={mockRestaurants} reviews={mockReviews} />
-      </BrowserRouter>
+      // <BrowserRouter>
+      <ProtectedRestaurantIndex logged_in={true} restaurants={mockRestaurants} reviews={mockReviews} current_user={MockUser}/>
+      // </BrowserRouter>
     );
+    screen.debug();
+    const element = screen.getByRole('heading', { name: /see all restaurants/i })
+    expect(element).toBeInTheDocument()
+
   });
 
-  it("renders when user is logged in", () => {
-    render(
-      <BrowserRouter>
-        <ProtectedRestaurantIndex logged_in={true} current_user={MockUser} restaurants={mockRestaurants} reviews={mockReviews} />
-      </BrowserRouter>
-    );
-    
-    const element = screen.getByRole('heading', { name: /see all restaurants/i })
-    screen.debug();
-    expect(element).toBeInTheDocument()
-  });
+
+
 
 
   describe("filterRestaurantsByUser", () => {
@@ -43,24 +38,29 @@ describe("<RestaurantIndex />", () => {
     });
   })
 
-  // ======= NEEDS RESEARCH ========
   // it("renders when user is logged in", () => {
   //   render(
   //     <BrowserRouter>
-  //       <ProtectedRestaurantIndex  logged_in={true} restaurants={mockRestaurants} reviews={mockReviews} current_user={MockUser}/>
+  //       <ProtectedRestaurantIndex logged_in={true} current_user={MockUser} restaurants={mockRestaurants} reviews={mockReviews} />
   //     </BrowserRouter>
   //   );
-  //   screen.logTestingPlaygroundURL()
-  
-  //   mockRestaurants.forEach((restaurant) => {
-  //     const restaurantName = screen.getByText(restaurant.name)
-  //     screen.debug();
-  //     expect(restaurantName).toBeInTheDocument()
-  //   })
 
-  //   screen.debug()
-  //   // const element = screen.getByText("Raging Burritos");
-  //   // expect(element).toBeInTheDocument();
-  // });
+
+
+  // ======= NEEDS RESEARCH ========
+  it.only("renders when user is logged in", () => {
+    render(
+      <BrowserRouter>
+        <ProtectedRestaurantIndex  logged_in={true} restaurants={mockRestaurants} reviews={mockReviews} current_user={MockUser}/>
+      </BrowserRouter>
+    );
+    screen.logTestingPlaygroundURL()
+    
+    screen.debug();
+    mockRestaurants.slice(0, 2).forEach((restaurant) => {
+      const restaurantName = screen.getByText(restaurant.name)
+      expect(restaurantName).toBeInTheDocument()
+    })
+  });
   
 });
