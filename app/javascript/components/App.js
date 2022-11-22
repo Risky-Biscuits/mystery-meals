@@ -17,6 +17,7 @@ import RestaurantReviewIndex from "./pages/RestaurantReviewIndex";
 import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
+import RandomRestaurant from "./components/RandomRestaurant";
 
 const App = (props) => {
   const [restaurants, setRestaurants] = useState([]);
@@ -197,6 +198,10 @@ const App = (props) => {
           <Route
             path="/restaurantreviewedit/:id"
             element={<RestaurantReviewEdit />}
+          />
+          <Route
+            path="/randomrestaurant"
+            element={<RandomRestaurant restaurants={restaurants} />}
           />
           {/* Unknown Link */}
           <Route path="*" element={<NotFound />} />

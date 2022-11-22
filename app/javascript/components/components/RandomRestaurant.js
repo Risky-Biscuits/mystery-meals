@@ -1,27 +1,44 @@
+import React from "react";
+import Button from "@mui/material/Button";
+import { useState } from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 import Phone from "@mui/icons-material/Phone";
 import Restaurant from "@mui/icons-material/Restaurant";
 import Savings from "@mui/icons-material/Savings";
 
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+const RandomRestaurant = ({ restaurants }) => {
+  const [randNum, setRandNum] = useState(0);
+  const [clicked, setClicked] = useState(false)
+  
+  const getRandomRestaurant = (rest, randNum) => {
+    setRandNum(Math.floor(Math.random() * rest.length));
+  };
 
-import React from "react";
-import { NavLink, useParams } from "react-router-dom";
-
-const RestaurantShow = ({ restaurants, logged_in }) => {
-  const { id } = useParams();
-  const currentRestaurant = restaurants?.find(
-    (restaurant) => restaurant.id === +id
-  );
+  const handleClick = () => {
+    getRandomRestaurant(restaurants, randNum);
+    setClicked(true)
+  };
 
   return (
-    <div className="page-container show-title">
-      <h1>Restaurant Details</h1>
-      {currentRestaurant && (
+    <div className="page-container">
+      <h1>Press Button For Our Pick For Dinner</h1>
+      <Button
+        onClick={() => handleClick()}
+        variant="contained"
+        sx={{
+          color: "white",
+          padding: { xs: "6px", sm: "12px" },
+          bgcolor: "#55AF4D",
+          fontSize: { xs: "1.2rem", sm: "1.2rem" },
+          mb: "10px"
+        }}
+      >
+        Press Me{" "}
+      </Button>
+      {restaurants[0] && clicked && (
         <Card
           elevation={24}
           sx={{
@@ -33,7 +50,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
           <CardMedia
             component="img"
             height="400px"
-            image={currentRestaurant.image}
+            image={restaurants[randNum].image}
             alt="restaurant"
           />
           <div className="show-card-container">
@@ -45,7 +62,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                   variant="h4"
                   component="div"
                 >
-                  <Restaurant /> {currentRestaurant.name}
+                  <Restaurant /> {restaurants[randNum].name}
                 </Typography>
                 <div className="show-card-container">
                   <div className="show-card-info">
@@ -55,7 +72,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                       variant="h7"
                       component="div"
                     >
-                      {currentRestaurant.food_type}
+                      {restaurants[randNum].food_type}
                     </Typography>
                     <Typography
                       sx={{ fontSize: "1.2rem" }}
@@ -64,7 +81,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                       component="div"
                     >
                       <Savings sx={{ verticalAlign: "bottom" }} />{" "}
-                      {currentRestaurant.price}
+                      {restaurants[randNum].price}
                     </Typography>
                     <Typography
                       sx={{ fontSize: "1.2rem" }}
@@ -73,7 +90,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                       component="div"
                     >
                       <Phone sx={{ verticalAlign: "bottom" }} />{" "}
-                      {currentRestaurant.phone_number}
+                      {restaurants[randNum].phone_number}
                     </Typography>
 
                     <div className="card-address-container">
@@ -92,7 +109,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                         variant="h7"
                         component="div"
                       >
-                        {currentRestaurant.street}
+                        {restaurants[randNum].street}
                       </Typography>
                       <div className="horizontal-flex-container">
                         <Typography
@@ -101,7 +118,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                           variant="h7"
                           component="div"
                         >
-                          {currentRestaurant.city},
+                          {restaurants[randNum].city},
                         </Typography>
                         &nbsp;
                         <Typography
@@ -110,7 +127,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                           variant="h7"
                           component="div"
                         >
-                          {currentRestaurant.state}
+                          {restaurants[randNum].state}
                         </Typography>
                         &nbsp;
                         <Typography
@@ -119,7 +136,7 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                           variant="h7"
                           component="div"
                         >
-                          {currentRestaurant.zip}
+                          {restaurants[randNum].zip}
                         </Typography>
                       </div>
                     </div>
@@ -130,7 +147,10 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
                       variant="h7"
                       component="div"
                     >
-                      <a href={`${currentRestaurant.website}`} target="_blank">
+                      <a
+                        href={`${restaurants[randNum].website}`}
+                        target="_blank"
+                      >
                         Visit Their Website{" "}
                       </a>
                     </Typography>
@@ -141,50 +161,8 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
           </div>
         </Card>
       )}
-      {/* ------------------------------ ⬇️ When Logged Out ⬇️ ------------------------------------- */}
-      {!logged_in && (
-        <NavLink to={`..`} style={{ textDecoration: "none" }}>
-          <Button
-            variant="contained"
-            sx={{
-              color: "white",
-              padding: "12px",
-              bgcolor: "#55AF4D",
-            }}
-          >
-            HOME
-          </Button>
-        </NavLink>
-      )}
-      {/* ------------------------------ ⬆️ When Logged In ⬆️ ------------------------------------- */}
-
-      <NavLink to={`/restaurantindex`} style={{ textDecoration: "none" }}>
-        <Button
-          variant="contained"
-          sx={{
-            color: "white",
-            padding: "12px",
-            bgcolor: "#55AF4D",
-          }}
-        >
-          BACK TO ALL RESTAURANTS
-        </Button>
-      </NavLink>
-      <NavLink to={`/restaurantedit/${id}`} style={{ textDecoration: "none" }}>
-        <Button
-          variant="contained"
-          sx={{
-            color: "white",
-            padding: "12px",
-            bgcolor: "#55AF4D",
-            mt: "15px",
-          }}
-        >
-          EDIT RESTAURANT
-        </Button>
-      </NavLink>
     </div>
   );
 };
 
-export default RestaurantShow;
+export default RandomRestaurant;
