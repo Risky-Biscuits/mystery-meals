@@ -1,13 +1,13 @@
-import React from "react";
+import Phone from "@mui/icons-material/Phone";
+import Restaurant from "@mui/icons-material/Restaurant";
+import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
+import Savings from "@mui/icons-material/Savings";
 import Button from "@mui/material/Button";
-import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Phone from "@mui/icons-material/Phone";
-import Restaurant from "@mui/icons-material/Restaurant";
-import Savings from "@mui/icons-material/Savings";
+import React, { useState } from "react";
 
 const RandomRestaurant = ({ restaurants }) => {
   const [randNum, setRandNum] = useState(0);
@@ -33,10 +33,11 @@ const RandomRestaurant = ({ restaurants }) => {
           padding: { xs: "6px", sm: "12px" },
           bgcolor: "#55AF4D",
           fontSize: { xs: "1.2rem", sm: "1.2rem" },
-          mb: "10px"
+          mb: "10px",
+          mt: "15px"
         }}
       >
-        Press Me{" "}
+        <RestaurantMenuRoundedIcon/>&nbsp; Press for Choice
       </Button>
       {restaurants[0] && clicked && (
         <Card

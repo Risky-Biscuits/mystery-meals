@@ -1,3 +1,5 @@
+import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
+import NoteAltRoundedIcon from '@mui/icons-material/NoteAltRounded';
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
@@ -240,7 +242,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             }}
             onClick={handleSubmit}
           >
-            Update Restaurant
+           <NoteAltRoundedIcon/>&nbsp;Update Restaurant
           </Button>
           <Button
             variant="contained"
@@ -251,7 +253,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             }}
             href="/restaurantindex"
           >
-            Cancel
+            <CancelRoundedIcon/>&nbsp;Cancel
           </Button>
         </Grid>
       </Grid>

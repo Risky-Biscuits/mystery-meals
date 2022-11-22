@@ -1,5 +1,7 @@
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
+import InsertEmoticonRoundedIcon from '@mui/icons-material/InsertEmoticonRounded';
 import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
 import ReviewsRoundedIcon from "@mui/icons-material/ReviewsRounded";
 import Button from "@mui/material/Button";
@@ -35,7 +37,7 @@ const Home = ({
                       }}
                       href={new_user_route}
                     >
-                      Get Started
+                      <AutoAwesomeRoundedIcon/>&nbsp;Get Started
                     </Button>
                   </div>
                 </div>
@@ -66,7 +68,7 @@ const Home = ({
                       }}
                       href={new_user_route}
                     >
-                      Get Started
+                      <AutoAwesomeRoundedIcon/>&nbsp;Get Started
                     </Button>
                   </div>
                 </div>

@@ -1,3 +1,5 @@
+import InfoIcon from '@mui/icons-material/Info';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -36,7 +38,7 @@ const ProtectedRestaurantIndex = ({
                   <div key={index}>
                     <Card
                       elevation={24}
-                      sx={{ width: 300, border: "5px solid #AD8350" }}
+                      sx={{ width: 325, border: "5px solid #AD8350" }}
                     >
                       <CardMedia
                         component="img"
@@ -49,7 +51,7 @@ const ProtectedRestaurantIndex = ({
                           {restaurant.name}
                         </Typography>
                       </CardContent>
-                      <CardActions>
+                      <CardActions sx={{display: "flex", justifyContent: "center"}}>
                         <NavLink
                           to={`/protectedrestaurantshow/${current_user.id}/${restaurant.id}`}
                           style={{ textDecoration: "none" }}
@@ -62,7 +64,7 @@ const ProtectedRestaurantIndex = ({
                               bgcolor: "#55AF4D",
                             }}
                           >
-                            DETAILS
+                            <InfoIcon/>&nbsp;DETAILS
                           </Button>
                         </NavLink>
                         <NavLink
@@ -77,7 +79,7 @@ const ProtectedRestaurantIndex = ({
                               bgcolor: "#55AF4D",
                             }}
                           >
-                            REVIEWS
+                           <ReviewsIcon/>&nbsp;REVIEWS
                           </Button>
                         </NavLink>
                       </CardActions>
