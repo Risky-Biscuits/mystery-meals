@@ -9,12 +9,13 @@ import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
   const { id } = useParams();
-  let currentRestaurant = restaurants?.find((restaurant) => restaurant.id === +id)
-  
-  console.log("CURRENT RESTAUARANT EDIT =>", currentRestaurant)
+  let currentRestaurant = restaurants?.find(
+    (restaurant) => restaurant.id === +id
+  );
+
+  console.log("CURRENT RESTAUARANT EDIT =>", currentRestaurant);
   const [editRestaurant, setEditRestaurant] = useState({
     name: currentRestaurant?.name,
     food_type: currentRestaurant?.food_type,

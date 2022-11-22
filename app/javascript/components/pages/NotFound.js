@@ -1,7 +1,6 @@
-import React from "react";
 import Button from "@mui/material/Button";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { fontSize } from "@mui/system";
 
 const NotFound = () => {
   return (
@@ -11,7 +10,12 @@ const NotFound = () => {
         <NavLink to={".."} style={{ textDecoration: "none" }}>
           <Button
             variant="contained"
-            sx={{ color: "white", padding: "12px", bgcolor: "#55AF4D", fontSize:"1.2rem" }}
+            sx={{
+              color: "white",
+              padding: "12px",
+              bgcolor: "#55AF4D",
+              fontSize: "1.2rem",
+            }}
           >
             Return Home
           </Button>

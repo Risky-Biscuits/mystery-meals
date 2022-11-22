@@ -24,7 +24,11 @@ const RestaurantShow = ({ restaurants, logged_in }) => {
       {currentRestaurant && (
         <Card
           elevation={24}
-          sx={{ width:{xs: "350px", md: "650" }, border: "5px solid #AD8350", mb: "1rem" }}
+          sx={{
+            width: { xs: "350px", md: "650" },
+            border: "5px solid #AD8350",
+            mb: "1rem",
+          }}
         >
           <CardMedia
             component="img"

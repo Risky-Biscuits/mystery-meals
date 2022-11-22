@@ -370,8 +370,8 @@ label {
   flex-direction: column;
 }
 
-.logged-out-box1-2 {
-  font-size: 2.1rem;
+.logged-out-box1-2>h1 {
+  font-size: 2.8rem;
 }
 
 .logged-out-box1-2>h1 {
@@ -399,7 +399,7 @@ label {
 
 .logged-out-box2-1>h2 {
   font-weight: 400;
-  font-size: 2.0rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -562,107 +562,112 @@ label {
 
 
 
-/* =========================Logged Out Home Styling ================================== */
+  /* =========================Logged Out Home Styling ================================== */
 
 
-.logged-out-box1 {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-  justify-content: center;
-  margin-bottom: -10px;
-  flex-wrap: wrap;
-}
+  .logged-out-box1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    margin-bottom: -10px;
+    flex-wrap: wrap;
+  }
 
-.logged-out-box1-1 {
-  display: flex;
-  flex-direction: column;
-}
+  .logged-out-box1-1 {
+    display: flex;
+    flex-direction: column;
+  }
 
-body > div:nth-child(1) > div > div.page-container > div.logged-out-home > div > div.logged-out-box1 > img{
-  width: 260px;
-}
-body > div:nth-child(1) > div > div.page-container > div.logged-out-home > div > div.logged-out-box2 > img {
-  width: 250px; 
-}
+  body>div:nth-child(1)>div>div.page-container>div.logged-out-home>div>div.logged-out-box1>img {
+    width: 260px;
+  }
 
-.logged-out-box1-2 {
-  font-size: 1rem;
-}
+  body>div:nth-child(1)>div>div.page-container>div.logged-out-home>div>div.logged-out-box2>img {
+    width: 250px;
+  }
 
 
 
-.logged-out-box2 {
-  gap: 10px;
-  justify-content: center;
-  padding: 0px 5px 0px 5px;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
+  .logged-out-box1-2>h1 {
+    font-size: 1.8rem;
+    margin-bottom: -10px;
+  }
 
-.logged-out-box2-1 {
-  flex-direction: column;
-  width: 300px;
-  margin-top: 15px;
-}
+  .logged-out-box2 {
+    gap: 10px;
+    justify-content: center;
+    padding: 0px 5px 0px 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
-.logged-out-box2-1>h2 {
-  font-size: 1rem;
-}
+  .logged-out-box2-1 {
+    flex-direction: column;
+    width: 300px;
+    margin-top: 15px;
+  }
 
-.logged-out-box2-2 {
-  font-size: 1rem;
-  margin: 0 5px 0 5px;
-}
-
-.logged-out-box2-button-box {
-  padding-top: 5px;
-}
+  .logged-out-box2-1>h2 {
+    font-size: 2rem;
+    margin-bottom: -10px;
+  }
 
 
-.logged-out-box3>h2 {
-  font-size: 1rem;
-}
 
-.logged-out-box3-1 {
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
+  .logged-out-box2-2 {
+    font-size: 1rem;
+    margin: 0 5px 0 5px;
+  }
 
-.team-1 {
-  font-size: 1rem;
-}
+  .logged-out-box2-button-box {
+    padding-top: 5px;
+  }
 
-.team-2 {
-  font-size: 1rem;
-}
 
-.team-3 {
-  font-size: 1rem;
-}
+  .logged-out-box3>h2 {
+    font-size: 2rem;
+  }
 
-.team-4 {
-  font-size: 1rem;
-}
+  .logged-out-box3-1 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
 
-.team-1>img {
-  width: 250px;
+  .team-1 {
+    font-size: 1rem;
+  }
 
-}
+  .team-2 {
+    font-size: 1rem;
+  }
 
-.team-2>img {
-  width: 250px;
-}
+  .team-3 {
+    font-size: 1rem;
+  }
 
-.team-3>img {
-  width: 250px;
-}
+  .team-4 {
+    font-size: 1rem;
+  }
 
-.team-4>img {
-  width: 250px;
-}
+  .team-1>img {
+    width: 250px;
+
+  }
+
+  .team-2>img {
+    width: 250px;
+  }
+
+  .team-3>img {
+    width: 250px;
+  }
+
+  .team-4>img {
+    width: 250px;
+  }
 
 
 

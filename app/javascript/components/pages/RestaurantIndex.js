@@ -10,10 +10,7 @@ import { NavLink } from "react-router-dom";
 const RestaurantIndex = ({
   restaurants,
   logged_in,
-  current_user,
-  new_user_route,
-  sign_in_route,
-  sign_out_route,
+
 }) => {
   return (
     <div className="page-container">

@@ -8,9 +8,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export const filterRestaurantsByUser = (restaurants, reviews, user_id) => {
-  const filteredReviews = reviews.filter((review) => review.user_id === user_id);
+  const filteredReviews = reviews.filter(
+    (review) => review.user_id === user_id
+  );
   const restaurantIds = filteredReviews.map((review) => review.restaurant_id);
-  return restaurants.filter((restaurant) => restaurantIds.includes(restaurant.id)
+  return restaurants.filter((restaurant) =>
+    restaurantIds.includes(restaurant.id)
   );
 };
 
@@ -33,7 +36,7 @@ const ProtectedRestaurantIndex = ({
                   <div key={index}>
                     <Card
                       elevation={24}
-                      sx={{ maxWidth: 300, border: "5px solid #AD8350" }}
+                      sx={{ width: 300, border: "5px solid #AD8350" }}
                     >
                       <CardMedia
                         component="img"
