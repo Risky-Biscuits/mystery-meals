@@ -147,7 +147,14 @@ p {
 }
 
 /* =========================DEVISE SECTION ================================== */
-/* Refer to /app/views/devise/
+/* Refer to /app/views/devise/ */
+
+.erb-header-image>img{
+  width: 100px;
+}
+.erb-form-image>img{
+  width: 400px;
+}
 
  /*  ===== Flexbox container for form ===== */
 .erb-header {
@@ -699,7 +706,56 @@ label {
   }
 
 
+/* === === === DEVISE FORMS === === ===  */
+.erb-header-image>img{
+  width: 100px;
+}
+.erb-form-image>img{
+  width: 250px;
+}
+.formContainer {
+  background-color: #D9D9D9;
+}
 
+.sign-up-header {
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+.field-container-row {
+  flex-direction: column;
+}
+.fieldContainer>h5 {
+  margin-bottom: -10px;
+}
+
+.flex-row-container {
+  /* flex-direction: column; */
+  flex-wrap: wrap-reverse;
+  justify-content: flex-start;
+  width: 300px;
+}
+
+.devise-btn {
+  width: 100px;
+}
+.erb-header {
+  font-size: 2rem;
+}
+.link-no-decoration {
+  font-size: 1rem;
+}
+.erb-footer {
+  font-size: .8rem;
+  padding: 2px;
+}
+html>body {
+  background-color: #D9D9D9
+}
 
 }
 
