@@ -32,9 +32,9 @@ const Home = ({
                       variant="contained"
                       sx={{
                         color: "white",
-                        padding: "12px",
+                        padding: {xs: "3px", sm: "12px"},
                         bgcolor: "#55AF4D",
-                        fontSize: "1.2rem",
+                        fontSize: {xs: ".8rem", sm: "1.2rem"},
                       }}
                       href={new_user_route}
                     >
