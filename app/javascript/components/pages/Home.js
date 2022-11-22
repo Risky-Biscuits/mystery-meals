@@ -125,10 +125,10 @@ const Home = ({
         {logged_in && (
           <>
             <h1>Welcome!</h1>
+            
             <img
+              className="home-img"
               src={require("../assets/risky-biscuit-home.png")}
-              height="273"
-              width="403"
             />
             <div className="logged-in-box1-1">
               <Button

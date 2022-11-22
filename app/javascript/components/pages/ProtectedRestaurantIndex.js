@@ -22,10 +22,10 @@ const ProtectedRestaurantIndex = ({
 }) => {
   return (
     <div className="page-container">
-      <h1>Protected Restaurant Index</h1>
+      <h1>My Reviews</h1>
       {logged_in && (
         <>
-          <h1>See All Restaurants</h1>
+          <h2>Here are all the restaurants you have reviewed</h2>
           <div className="card-container">
             {filterRestaurantsByUser(restaurants, reviews, current_user.id).map(
               (restaurant, index) => {

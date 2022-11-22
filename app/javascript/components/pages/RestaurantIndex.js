@@ -4,8 +4,8 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { NavLink } from "react-router-dom";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const RestaurantIndex = ({
   restaurants,
@@ -16,13 +16,14 @@ const RestaurantIndex = ({
   sign_out_route,
 }) => {
   return (
-    <>
+    <div className="page-container">
 
 {/* ------------------------------When Logged In------------------------------------- */}    
 
       {logged_in && (
         <div className="page-container">
-          <h1>See All Restaurants</h1>
+          <h1>All Available Restaurants</h1>
+          <h2>See all the restaurants our members have added</h2>
           <div className="card-container">
             {restaurants.map((restaurant, index) => {
               return (
@@ -130,7 +131,7 @@ const RestaurantIndex = ({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
