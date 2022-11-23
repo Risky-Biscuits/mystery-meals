@@ -95,17 +95,13 @@ const Header = ({
           justifyContent: { xs: "center", lg: "space-between" },
           bgcolor: "#AD8350",
           borderRadius: "0px 0px 5px 5px",
+          alignItems: "center"
         }}
       >
         <div className="logo-username-container">
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          >
+          <div className="header-img">
             <img src={require("../assets/Risky Biscuit_Headerlogo.png")} />
-          </IconButton>
+          </div>
           {logged_in && (
             <div className="name-box">
               Hi, {current_user?.first_name} {current_user?.last_name}
