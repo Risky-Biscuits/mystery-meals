@@ -55,6 +55,12 @@ p {
   align-items: center;
 }
 
+.header-img{
+  width: 100px;
+  /* background-color: red; */
+  margin-left: 20px;
+}
+
 .name-box {
   border: 1px solid white;
   padding: 5px;
@@ -659,17 +665,27 @@ label {
 
   }
 }
+.header-img>img {
+  width: 100px;
+  margin-left: -25px;
+  margin-right: 25px;
+  margin-top: 5px;
+}
 
 @media (max-width: 729px) {
 
   /* LOGO */
-  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>button>img {
+  .header-img>img {
     width: 80px;
-    margin-right: 10px;
+    margin-left: -25px;
+    margin-right: 25px;
+    margin-top: 5px;
   }
 
+
+
   /* USERNAME */
-  body>div:nth-child(1)>div>header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation9.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionSticky.css-1d2zdi3-MuiPaper-root-MuiAppBar-root>div>div.logo-username-container>div {
+  .name-box {
     font-size: .8rem;
     margin-left: -10px;
   }
@@ -1019,8 +1035,8 @@ label {
 
 
 /* LINK Responsiveness */
-@media (max-width: 1318.75px) {
+@media (max-width: 1301.25px) {
   .header-links-container {
-    margin-top: -50px;
+    margin-top: -30px;
   }
 }
