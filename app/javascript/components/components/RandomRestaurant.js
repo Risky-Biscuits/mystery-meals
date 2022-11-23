@@ -10,18 +10,26 @@ import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
 
 const RandomRestaurant = ({ restaurants }) => {
+// ============= === === === State === === === =================================
+  // State to store identifier for random restaurant selected
   const [randNum, setRandNum] = useState(0);
+  // State to store click state, which is used to tell 
+  // conditional render logic to display card when clicked 
   const [clicked, setClicked] = useState(false)
   
+// ============= === === === Functions === === === =============================
+  // Function generates random number based on restaurants array length
   const getRandomRestaurant = (rest, randNum) => {
     setRandNum(Math.floor(Math.random() * rest.length));
   };
-
+  // Function that handles click events. Calls function to generate random 
+  // number and sets Click state to TRUE
   const handleClick = () => {
     getRandomRestaurant(restaurants, randNum);
     setClicked(true)
   };
 
+// ========== === === === Page Render Begins === === === =======================
   return (
     <div className="page-container">
       <h1>Press Button For Our Pick For Dinner</h1>
@@ -39,6 +47,10 @@ const RandomRestaurant = ({ restaurants }) => {
       >
         <RestaurantMenuRoundedIcon/>&nbsp; Press for Choice
       </Button>
+
+{/* ========= === === === Conditional Render Logic === === === ============= */}
+      {/* If there is data in restaurants available, and the Button has been 
+      clicked... render this section (Restaurant Card) */}
       {restaurants[0] && clicked && (
         <Card
           elevation={24}

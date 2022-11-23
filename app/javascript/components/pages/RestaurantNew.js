@@ -79,7 +79,7 @@ const RestaurantNew = ({ createRestaurant }) => {
             <TextField
               onChange={handleChange}
               inputProps={{
-                maxLength: 10,
+                maxLength: 25,
               }}
               required
               id="name"

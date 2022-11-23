@@ -37,7 +37,7 @@ const RestaurantIndex = ({
                       image={restaurant.image}
                       alt="restaurant"
                     />
-                    <CardContent>
+                    <CardContent sx={{height: "110px"}}>
                       <Typography gutterBottom variant="h5" component="div">
                         {restaurant.name}
                       </Typography>
@@ -101,7 +101,7 @@ const RestaurantIndex = ({
                       image={restaurant.image}
                       alt="restaurant"
                     />
-                    <CardContent>
+                    <CardContent sx={{height: "110px"}}>
                       <Typography gutterBottom variant="h5" component="div">
                         {restaurant.name}
                       </Typography>
