@@ -24,80 +24,105 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
 
   return (
     <div className="page-container">
-      <h1>Restaurant Review Show</h1>
-      {currentRestaurant && (
-        <>
-          <img src={currentRestaurant.image} />
-          <p>{currentRestaurant.name}</p>
-          <p>{currentRestaurant.food_type}</p>
-          <p>{currentRestaurant.price}</p>
-          <p>{currentRestaurant.phone_number}</p>
-          <p>{currentRestaurant.website}</p>
-          <p>{currentRestaurant.street}</p>
-          <p>{currentRestaurant.city}</p>
-          <p>{currentRestaurant.state}</p>
-          <p>{currentRestaurant.zip}</p>
-          <br></br>
-          <p id="averageRestaurantReview">
-            {averageReviewRating >= 4 && (
-              <img src={require("../assets/new_good.png")} />
+      <div className="row">
+        <div className="column editedColumn">
+          <div className="column-1">
+            {currentRestaurant && (
+              <>
+                <div className="imageContainer">
+                  <img
+                    src={currentRestaurant.image}
+                    className="restaurantPicture"
+                  />
+                </div>
+                <p className="restaurantInfo">{currentRestaurant.name}</p>
+                <p className="restaurantInfo">{currentRestaurant.food_type}</p>
+                <p className="restaurantInfo">{currentRestaurant.price}</p>
+                <p className="restaurantInfo">
+                  {currentRestaurant.phone_number}
+                </p>
+                <p className="restaurantInfo">{currentRestaurant.website}</p>
+                <p className="restaurantInfo">{currentRestaurant.street}</p>
+                <p className="restaurantInfo">{currentRestaurant.city}</p>
+                <p className="restaurantInfo">{currentRestaurant.state}</p>
+                <p className="restaurantInfo">{currentRestaurant.zip}</p>
+                <br></br>
+                <NavLink
+                  to={`/restaurantreviewnew/${id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    variant="contained"
+                    sx={{
+                      color: "white",
+                      padding: "12px",
+                      bgcolor: "#55AF4D",
+                    }}
+                  >
+                    ADD REVIEW
+                  </Button>
+                </NavLink>
+              </>
             )}
-            {averageReviewRating === 3 && averageReviewRating < 4 && (
-              <img src={require("../assets/new_mid.png")} />
-            )}
-            {averageReviewRating < 3 && (
-              <img src={require("../assets/new_bad.png")} />
-            )}
-          </p>
-          <table>
-            <thead>
-              <tr>
-                <th>Review</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              {currentReviews.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.review}</td>
-                  <td>
-                    <div className="star-rating">
-                      {[...Array(item.rating)].map((star, index) => {
-                        index += 1;
-                        return <span className="star">&#9733;</span>;
-                      })}
-                      {[...Array(5-item.rating)].map((star, index) => {
-                        index += 1;
-                        return <span className="star">&#9734;</span>;
-                      })}
+          </div>
+        </div>
+        <div className="column editedColumn">
+          <div className="column-2">
+            {currentRestaurant && (
+              <>
+                <div className="averageRestaurantReview">
+                  {averageReviewRating >= 4 && (
+                    <>
+                      <h2>You've Got Good Taste! This Is A Good Restaurant!</h2>
+                      <img src={require("../assets/new_good.png")} />
+                    </>
+                  )}
+                  {averageReviewRating >= 3 && averageReviewRating < 4 && (
+                    <>
+                      <h2>
+                        You've Got Meh Taste... This Is A Okay Restaurant.
+                      </h2>
+                      <img src={require("../assets/new_mid.png")} />
+                    </>
+                  )}
+                  {averageReviewRating < 3 && (
+                    <>
+                      <h2>
+                        You've Got Horrible Taste... This Is A Bad Restaurant.
+                      </h2>
+                      <img src={require("../assets/new_bad.png")} />
+                    </>
+                  )}
+                </div>
+                <div className="restaurantTable">
+                  {currentReviews.map((item) => (
+                    <div key={item.id} className="commentRow ">
+                      <div className="comment">
+                        <div>{item.user.first_name}</div>
+                        <div className="commentHolder">{item.review}</div>
+                      </div>
+                      <div className="review">
+                        <div className="star-rating">
+                          {[...Array(item.rating)].map((star, index) => {
+                            index += 1;
+                            return <span className="star">&#9733;</span>;
+                          })}
+                          {[...Array(5 - item.rating)].map((star, index) => {
+                            index += 1;
+                            return <span className="star">&#9734;</span>;
+                          })}
+                        </div>
+                      </div>
                     </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </>
-      )}
-      <NavLink
-        to={`/restaurantreviewnew/${id}`}
-        style={{ textDecoration: "none" }}
-      >
-        <Button
-          variant="contained"
-          sx={{
-            color: "white",
-            padding: "12px",
-            bgcolor: "#55AF4D",
-          }}
-        >
-          ADD REVIEW
-        </Button>
-      </NavLink>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default RestaurantReviewShow;
-
-
-
