@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import restaurants from "./mockRestaurants";
-import reviews from "./mockReviews";
+import RandomRestaurant from "./components/RandomRestaurant";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProtectedRestaurantIndex from "./pages/ProtectedRestaurantIndex";
@@ -13,11 +12,9 @@ import RestaurantEdit from "./pages/RestaurantEdit";
 import RestaurantIndex from "./pages/RestaurantIndex";
 import RestaurantNew from "./pages/RestaurantNew";
 import RestaurantReviewEdit from "./pages/RestaurantReviewEdit";
-import RestaurantReviewIndex from "./pages/RestaurantReviewIndex";
 import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
-import RandomRestaurant from "./components/RandomRestaurant";
 
 const App = (props) => {
   const [restaurants, setRestaurants] = useState([]);
@@ -171,10 +168,6 @@ const App = (props) => {
           />
 
           {/* Restaurant Review Routes */}
-          <Route
-            path="/restaurantreviewindex"
-            element={<RestaurantReviewIndex />}
-          />
           <Route
             path="/restaurantreviewshow/:id"
             element={
