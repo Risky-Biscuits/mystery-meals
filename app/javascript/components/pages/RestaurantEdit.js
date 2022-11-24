@@ -17,7 +17,6 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
     (restaurant) => restaurant.id === +id
   );
 
-  console.log("CURRENT RESTAUARANT EDIT =>", currentRestaurant);
   const [editRestaurant, setEditRestaurant] = useState({
     name: currentRestaurant?.name,
     food_type: currentRestaurant?.food_type,
@@ -79,6 +78,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           <Grid item xs={6}>
             <TextField
               onChange={handleChange}
+              value={editRestaurant.name}
               required
               id="name"
               name="name"
@@ -90,6 +90,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           <Grid item xs={12}>
             <TextField
               onChange={handleChange}
+              value={editRestaurant.phone_number}
               required
               id="phone"
               name="phone_number"
@@ -110,12 +111,12 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             >
               <InputLabel required>Price</InputLabel>
               <Select
+                value={editRestaurant.price}
                 labelId="priceLabel"
                 id="price"
                 label="Price"
                 name="price"
                 onChange={handleChange}
-                defaultValue={""}
               >
                 <MenuItem value={"$"}>$ - Cheap</MenuItem>
                 <MenuItem value={"$$"}>$$ - Moderate</MenuItem>
@@ -135,12 +136,12 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             >
               <InputLabel required>Food Type</InputLabel>
               <Select
+                value={editRestaurant.food_type}
                 labelId="foodLabel"
                 id="food_type"
                 label="Food Type"
                 name="food_type"
                 onChange={handleChange}
-                defaultValue={""}
               >
                 <MenuItem value={"Mexican"}>Mexican</MenuItem>
                 <MenuItem value={"Chinese"}>Chinese</MenuItem>
@@ -158,6 +159,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
 
         <Grid item xs={12} sx={{ width: "81%" }}>
           <TextField
+            value={editRestaurant.website}
             onChange={handleChange}
             sx={{ width: "100%" }}
             required
@@ -169,6 +171,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
 
         <Grid item xs={12} sx={{ width: "81%" }}>
           <TextField
+            value={editRestaurant.image}
             onChange={handleChange}
             sx={{ width: "100%" }}
             required
@@ -180,6 +183,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
         <Grid sx={{ display: "flex", gap: "15px" }}>
           <Grid item xs={12}>
             <TextField
+              value={editRestaurant.street}
               onChange={handleChange}
               required
               id="street"
@@ -190,6 +194,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
 
           <Grid item xs={12}>
             <TextField
+              value={editRestaurant.city}
               onChange={handleChange}
               required
               id="city"
@@ -203,6 +208,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
         <Grid sx={{ display: "flex", gap: "15px" }}>
           <Grid item xs={12}>
             <TextField
+              value={editRestaurant.state}
               onChange={handleChange}
               id="state"
               name="state"
@@ -212,6 +218,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
 
           <Grid item xs={12}>
             <TextField
+              value={editRestaurant.zip}
               type="number"
               onChange={handleChange}
               required
