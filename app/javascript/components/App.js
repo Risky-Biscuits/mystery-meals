@@ -11,7 +11,6 @@ import ProtectedRestaurantShow from "./pages/ProtectedRestaurantShow";
 import RestaurantEdit from "./pages/RestaurantEdit";
 import RestaurantIndex from "./pages/RestaurantIndex";
 import RestaurantNew from "./pages/RestaurantNew";
-import RestaurantReviewEdit from "./pages/RestaurantReviewEdit";
 import RestaurantReviewNew from "./pages/RestaurantReviewNew";
 import RestaurantReviewShow from "./pages/RestaurantReviewShow";
 import RestaurantShow from "./pages/RestaurantShow";
@@ -187,10 +186,6 @@ const App = (props) => {
                 restaurants={restaurants}
               />
             }
-          />
-          <Route
-            path="/restaurantreviewedit/:id"
-            element={<RestaurantReviewEdit />}
           />
           <Route
             path="/randomrestaurant"
