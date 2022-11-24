@@ -20,7 +20,7 @@ describe("<RestaurantNew  />", () => {
       </BrowserRouter>
     );
     const element =  screen.getByRole('heading', {
-      name: /restaurant new/i
+      name: /Add A New Restaurant To Our Database/i
     })
     expect(element).toBeInTheDocument()
   });
@@ -31,7 +31,7 @@ describe("<RestaurantNew  />", () => {
          <RestaurantNew />
       </BrowserRouter>
     );
-    const element = screen.getByRole('heading', { name: /add your restaurant/i })
+    const element = screen.getByRole('heading', { name: /New Restaurant Form/i })
     expect(element).toBeInTheDocument()
   });
   

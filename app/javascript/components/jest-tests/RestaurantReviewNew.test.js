@@ -27,27 +27,6 @@ describe("<RestaurantReviewNew />", () => {
     screen.logTestingPlaygroundURL()
   });
 
-  it("displays the header", () => {
-    render(
-        <MemoryRouter initialEntries={["/restaurantreviewnew/2"]}>
-          <Routes>
-            <Route
-              path="/restaurantreviewnew/:id"
-              element={
-                <RestaurantReviewNew
-                  restaurants={restaurants}
-                  current_user={"./__mockUser__/MockUser.js"}
-                />
-              }
-            />
-          </Routes>
-        </MemoryRouter>
-    );
-    const element = screen.getByRole('heading', { name: /restaurant review new/i })
-    expect(element).toBeInTheDocument()
-  });
-
-
   it("displays review text from text field", () => {
     render(
         <MemoryRouter initialEntries={["/restaurantreviewnew/2"]}>
