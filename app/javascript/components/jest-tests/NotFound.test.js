@@ -10,7 +10,7 @@ describe("<NotFound />", () => {
         <NotFound />
       </BrowserRouter>
     );
-    const notFound = screen.getByText("Not Found")
+    const notFound = screen.getByText("Oops! This Page Is Not Found")
     expect(notFound).toBeInTheDocument()
   });
 
