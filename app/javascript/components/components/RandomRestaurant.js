@@ -20,8 +20,14 @@ const RandomRestaurant = ({ restaurants }) => {
 // ============= === === === Functions === === === =============================
   // Function generates random number based on restaurants array length
   const getRandomRestaurant = (rest, randNum) => {
-    setRandNum(Math.floor(Math.random() * rest.length));
+    let currentNumber = randNum
+    let newNumber = Math.floor(Math.random() * rest.length)
+    while(currentNumber === newNumber) {
+      newNumber = Math.floor(Math.random() * rest.length)
+    }
+    setRandNum(newNumber);
   };
+
   // Function that handles click events. Calls function to generate random 
   // number and sets Click state to TRUE
   const handleClick = () => {
@@ -55,7 +61,7 @@ const RandomRestaurant = ({ restaurants }) => {
         <Card
           elevation={24}
           sx={{
-            width: { xs: "350px", md: "650" },
+            width: { xs: "350px", md: "650px" },
             border: "5px solid #AD8350",
             mb: "1rem",
           }}
