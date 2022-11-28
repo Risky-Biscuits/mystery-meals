@@ -19,7 +19,7 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
 
   // ======= === === === Review Calculation Section === === === ================
   // This section calculates the average review score from reviews of all users
-  
+
   //REVIEW variables to be used in rating calculations
   let averageReviewRating = 0;
   let totalReviewRating = 0;
@@ -49,19 +49,45 @@ const RestaurantReviewShow = ({ reviews, restaurants }) => {
                   />
                 </div>
                 <div className="restaurant-info-container">
-                  <p className="restaurantInfo">{currentRestaurant.name}</p>
+                  <p className="restaurantInfo title">
+                    {currentRestaurant.name}
+                  </p>
+
                   <p className="restaurantInfo">
                     {currentRestaurant.food_type}
                   </p>
-                  <p className="restaurantInfo">{currentRestaurant.price}</p>
+                  <a href={currentRestaurant.website} target="_blank">
+                    <p className="restaurantInfo">Website</p>
+                  </a>
+                  <div className="review-container review-space-container">
+                  <p className="restaurantInfo bold">Price: </p>
+                  <p className="restaurantInfo">
+                   {currentRestaurant.price}
+                  </p>
+                  </div>
+
+                  <div className="review-space-container">
+                  <p className="restaurantInfo bold">Phone Number: </p>
                   <p className="restaurantInfo">
                     {currentRestaurant.phone_number}
                   </p>
-                  <p className="restaurantInfo">{currentRestaurant.website}</p>
-                  <p className="restaurantInfo">{currentRestaurant.street}</p>
-                  <p className="restaurantInfo">{currentRestaurant.city}</p>
-                  <p className="restaurantInfo">{currentRestaurant.state}</p>
-                  <p className="restaurantInfo">{currentRestaurant.zip}</p>
+                  </div>
+
+                  <div className="review-space-container">
+                    <p className="restaurantInfo bold">Address: </p>
+                    <p className="restaurantInfo">{currentRestaurant.street}</p>
+                    <div className="review-container">
+                      <p className="restaurantInfo">
+                        {currentRestaurant.city},
+                      </p>
+                      &nbsp;
+                      <p className="restaurantInfo">
+                        {currentRestaurant.state}
+                      </p>
+                      &nbsp; &nbsp;
+                      <p className="restaurantInfo">{currentRestaurant.zip}</p>
+                    </div>
+                  </div>
                   <br></br>
                   <NavLink
                     to={`/restaurantreviewnew/${id}`}

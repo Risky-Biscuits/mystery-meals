@@ -32,7 +32,7 @@ const ProtectedRestaurantShow = ({
         <>
           <Card
             elevation={24}
-            sx={{ width: 650, border: "5px solid #AD8350", mb: "1rem" }}
+            sx={{ width: {xs: "350px", md: "650px"}, border: "5px solid #AD8350", mb: "1rem" }}
           >
             <CardMedia
               component="img"
