@@ -61,7 +61,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
   return (
 
     <div className="page-container form-title">
-      <h1>Add A New Restaurant To Our Database</h1>
+      <h1>Update The Restaurant Details</h1>
       <Grid
         className="fieldContainer"
         sx={{
@@ -73,7 +73,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
         }}
       >
         <Typography variant="h6" gutterBottom>
-          New Restaurant Form
+          Update Restaurant Form
         </Typography>
         <Grid
           sx={{
@@ -284,7 +284,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             onClick={handleSubmit}
           >
             <AddCircleOutlineIcon />
-            &nbsp;Add Restaurant
+            &nbsp;Update Restaurant
           </Button>
           <Button
             variant="contained"
