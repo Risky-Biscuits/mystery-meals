@@ -537,6 +537,8 @@ label {
 }
 
 /* =========================REVIEW SHOW SECTION ================================== */
+
+
 .row {
   display: flex;
   flex-direction: row;
@@ -645,7 +647,21 @@ label {
 .averageRestaurantReview>h2 {
   font-size: 3rem;
 }
+.title{
+  font-weight: bold;
+  font-size: 2rem;
+}
+.bold {
+  font-weight: bold;
+}
+.review-container {
+  display: flex;
+  justify-content: center;
+}
 
+.review-space-container{
+  margin-top: 15px;
+}
 /* ===================== RESPONSIVE CSS Styles ============================== */
 /* === Responsive Phone Size ==================================== */
 @media (max-width: 937px) {
