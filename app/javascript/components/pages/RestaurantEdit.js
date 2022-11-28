@@ -1,3 +1,5 @@
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import CancelPresentationRounded from "@mui/icons-material/CancelPresentationRounded";
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import NoteAltRoundedIcon from '@mui/icons-material/NoteAltRounded';
 import Button from "@mui/material/Button";
@@ -57,53 +59,70 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="page-container">
-      <h1>Restaurant Update</h1>
+
+    <div className="page-container form-title">
+      <h1>Add A New Restaurant To Our Database</h1>
       <Grid
         className="fieldContainer"
         sx={{
-          padding: "20px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           gap: "15px",
-          width: "650px",
         }}
       >
         <Typography variant="h6" gutterBottom>
-          Update Your Restaurant
+          New Restaurant Form
         </Typography>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Grid item xs={6}>
             <TextField
-              onChange={handleChange}
               value={editRestaurant.name}
+              onChange={handleChange}
+              inputProps={{
+                maxLength: 25,
+              }}
               required
               id="name"
               name="name"
               label="Name of Restaurant"
               size="medium"
               type="text"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              // value={userInput}
             />
           </Grid>
           <Grid item xs={12}>
             <TextField
-              onChange={handleChange}
               value={editRestaurant.phone_number}
+              onChange={handleChange}
               required
               id="phone"
               name="phone_number"
               label="Phone Number"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
         </Grid>
 
-        <Grid sx={{ display: "flex", gap: "15px" }}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: "240px",
+                width: { xs: "300px", sm: "240px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -111,9 +130,9 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             >
               <InputLabel required>Price</InputLabel>
               <Select
-                value={editRestaurant.price}
                 labelId="priceLabel"
                 id="price"
+                value={editRestaurant.price}
                 label="Price"
                 name="price"
                 onChange={handleChange}
@@ -128,7 +147,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: "240px",
+                width: { xs: "300px", sm: "240px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -136,12 +155,13 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             >
               <InputLabel required>Food Type</InputLabel>
               <Select
-                value={editRestaurant.food_type}
                 labelId="foodLabel"
                 id="food_type"
+                value={editRestaurant.food_type}
                 label="Food Type"
                 name="food_type"
                 onChange={handleChange}
+                sx={{ width: { xs: "300px", sm: "inherit" } }}
               >
                 <MenuItem value={"Mexican"}>Mexican</MenuItem>
                 <MenuItem value={"Chinese"}>Chinese</MenuItem>
@@ -157,7 +177,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sx={{ width: "81%" }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
           <TextField
             value={editRestaurant.website}
             onChange={handleChange}
@@ -169,7 +189,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           />
         </Grid>
 
-        <Grid item xs={12} sx={{ width: "81%" }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
           <TextField
             value={editRestaurant.image}
             onChange={handleChange}
@@ -180,8 +200,14 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             label="Image URL"
           />
         </Grid>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Grid item xs={6}>
             <TextField
               value={editRestaurant.street}
               onChange={handleChange}
@@ -189,10 +215,11 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               id="street"
               name="street"
               label="street"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <TextField
               value={editRestaurant.city}
               onChange={handleChange}
@@ -201,22 +228,30 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               name="city"
               label="City"
               autoComplete="City"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
         </Grid>
 
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}>
+        <Grid
+          sx={{
+            display: "flex",
+            gap: "15px",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
+          <Grid item xs={6}>
             <TextField
               value={editRestaurant.state}
               onChange={handleChange}
               id="state"
               name="state"
               label="State"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <TextField
               value={editRestaurant.zip}
               type="number"
@@ -226,18 +261,17 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               name="zip"
               label="Zip / Postal code"
               autoComplete="Zip"
+              sx={{ width: { xs: "300px", sm: "inherit" } }}
             />
           </Grid>
-        </Grid>
-        <Grid sx={{ display: "flex", gap: "15px" }}>
-          <Grid item xs={12}></Grid>
         </Grid>
         <Grid
           sx={{
             display: "flex",
-            justifyContent: "left",
+            justifyContent: "center",
             gap: "15px",
-            mr: "170px",
+            mr: { xs: "inherit", md: "110px" },
+            flexDirection: { xs: "column", sm: "row" },
           }}
         >
           <Button
@@ -249,7 +283,8 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             }}
             onClick={handleSubmit}
           >
-           <NoteAltRoundedIcon/>&nbsp;Update Restaurant
+            <AddCircleOutlineIcon />
+            &nbsp;Add Restaurant
           </Button>
           <Button
             variant="contained"
@@ -260,7 +295,8 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
             }}
             href="/restaurantindex"
           >
-            <CancelRoundedIcon/>&nbsp;Cancel
+            <CancelPresentationRounded />
+            &nbsp;Cancel
           </Button>
         </Grid>
       </Grid>
