@@ -1,5 +1,5 @@
-import InfoIcon from '@mui/icons-material/Info';
-import ReviewsIcon from '@mui/icons-material/Reviews';
+import InfoIcon from "@mui/icons-material/Info";
+import ReviewsIcon from "@mui/icons-material/Reviews";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -38,7 +38,7 @@ const ProtectedRestaurantIndex = ({
                   <div key={index}>
                     <Card
                       elevation={24}
-                      sx={{ width: 325, border: "5px solid #AD8350" }}
+                      sx={{ width: "325px", border: "5px solid #AD8350" }}
                     >
                       <CardMedia
                         component="img"
@@ -46,12 +46,14 @@ const ProtectedRestaurantIndex = ({
                         image={restaurant.image}
                         alt="restaurant"
                       />
-                      <CardContent>
+                      <CardContent sx={{ height: "110px" }}>
                         <Typography gutterBottom variant="h5" component="div">
                           {restaurant.name}
                         </Typography>
                       </CardContent>
-                      <CardActions sx={{display: "flex", justifyContent: "center"}}>
+                      <CardActions
+                        sx={{ display: "flex", justifyContent: "center" }}
+                      >
                         <NavLink
                           to={`/protectedrestaurantshow/${current_user.id}/${restaurant.id}`}
                           style={{ textDecoration: "none" }}
@@ -64,7 +66,8 @@ const ProtectedRestaurantIndex = ({
                               bgcolor: "#55AF4D",
                             }}
                           >
-                            <InfoIcon/>&nbsp;DETAILS
+                            <InfoIcon />
+                            &nbsp;DETAILS
                           </Button>
                         </NavLink>
                         <NavLink
@@ -79,7 +82,8 @@ const ProtectedRestaurantIndex = ({
                               bgcolor: "#55AF4D",
                             }}
                           >
-                           <ReviewsIcon/>&nbsp;REVIEWS
+                            <ReviewsIcon />
+                            &nbsp;REVIEWS
                           </Button>
                         </NavLink>
                       </CardActions>
