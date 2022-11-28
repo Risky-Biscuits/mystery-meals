@@ -95,7 +95,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               label="Name of Restaurant"
               size="medium"
               type="text"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
               // value={userInput}
             />
           </Grid>
@@ -107,7 +107,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               id="phone"
               name="phone_number"
               label="Phone Number"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
             />
           </Grid>
         </Grid>
@@ -122,7 +122,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: { xs: "300px", sm: "240px" },
+                width: { xs: "300px", sm: "300px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -147,7 +147,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           <Grid item xs={6}>
             <FormControl
               sx={{
-                width: { xs: "300px", sm: "240px" },
+                width: { xs: "300px", sm: "300px" },
                 borderRadius: "5px",
                 bgcolor: "white",
                 height: "65px",
@@ -161,7 +161,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
                 label="Food Type"
                 name="food_type"
                 onChange={handleChange}
-                sx={{ width: { xs: "300px", sm: "inherit" } }}
+                sx={{ width: { xs: "300px", sm: "300px" } }}
               >
                 <MenuItem value={"Mexican"}>Mexican</MenuItem>
                 <MenuItem value={"Chinese"}>Chinese</MenuItem>
@@ -177,7 +177,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           </Grid>
         </Grid>
 
-        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "615px" } }}>
           <TextField
             value={editRestaurant.website}
             onChange={handleChange}
@@ -189,7 +189,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
           />
         </Grid>
 
-        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "81%" } }}>
+        <Grid item xs={6} sx={{ width: { xs: "300px", sm: "615px" } }}>
           <TextField
             value={editRestaurant.image}
             onChange={handleChange}
@@ -215,7 +215,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               id="street"
               name="street"
               label="street"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
             />
           </Grid>
 
@@ -228,7 +228,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               name="city"
               label="City"
               autoComplete="City"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
             />
           </Grid>
         </Grid>
@@ -247,7 +247,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               id="state"
               name="state"
               label="State"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
             />
           </Grid>
 
@@ -261,7 +261,7 @@ const RestaurantEdit = ({ restaurants, updateRestaurant }) => {
               name="zip"
               label="Zip / Postal code"
               autoComplete="Zip"
-              sx={{ width: { xs: "300px", sm: "inherit" } }}
+              sx={{ width: { xs: "300px", sm: "300px" } }}
             />
           </Grid>
         </Grid>
